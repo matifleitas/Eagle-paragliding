@@ -2,7 +2,7 @@
 
 require_once'libs/smarty-4.2.1/libs/Smarty.class.php';
 
-class LoginView {
+class ParaglidingView {
     private $smarty;
 
     function __construct()  {
@@ -10,9 +10,15 @@ class LoginView {
     }
 
     function Home() {
-        $this->smarty->display('templates/header.php');
-        $this->smarty->display('loginAdmin.php');
-        $this->smarty->display('templates/footer.php');
+
+        $loginAdmin[] =  
+
+
+        $this->smarty->display('templates/header.tpl');
+        $this->smarty->assign('login', $loginAdmin);
+
+        $this->smarty->display('templates/homeLogin.tpl');
+        $this->smarty->display('templates/footer.tpl');
     }
 
     function GliderLists() {
@@ -20,7 +26,7 @@ class LoginView {
     }
 
     function infoAboutUs() {
-    $this->smarty->display(/*archivo de la info de nostros*/);
+        $this->smarty->display(/*archivo de la info de nostros*/);
     }
 }
 
