@@ -9,24 +9,17 @@ class ParaglidingView {
         $this->smarty = new Smarty();
     }
 
-    function Home() {
 
-        $loginAdmin[] =  
+    function GliderLists($gliders) {
 
-
-        $this->smarty->display('templates/header.tpl');
-        $this->smarty->assign('login', $loginAdmin);
-
-        $this->smarty->display('templates/homeLogin.tpl');
-        $this->smarty->display('templates/footer.tpl');
+        $this->smarty->assign('title', 'Velas de Eagle paragliding');
+        $this->smarty->assign('gliders', $gliders);
+        $this->smarty->display('abm.velas.tpl');
     }
 
-    function GliderLists() {
-        $this->smarty->display(/*aca tiro la lista de velas que voy a tener en la page*/);
-    }
+//     function infoAboutUs() {
+//         $this->smarty->display(/*archivo de la info de nostros*/);
+//     }
+// }
 
-    function infoAboutUs() {
-        $this->smarty->display(/*archivo de la info de nostros*/);
-    }
 }
-

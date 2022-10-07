@@ -8,7 +8,7 @@ class ParaglidingModel {
     }
 
     public function getAllGliders() {
-        $query = $this->db->prepare('SELECT * FROM parapentes');
+        $query = $this->db->prepare("SELECT * FROM parapentes");
         $query->execute();
 
         $gliders = $query->fetchAll(PDO::FETCH_OBJ);
@@ -17,10 +17,16 @@ class ParaglidingModel {
     }
 
     
-    public function getGliderbyId($id) {
+    // public function getGliderbyId($id) {
 
-        $query = $this->db->prepare('SELECT name, description, difficulty, price FROM parapentes WHERE id = ?');
-        $query -> execute([$id]);
-        return $query->fetch(PDO::FETCH_OBJ);
+    //     $query = $this->db->prepare('SELECT name, description, difficulty, price FROM parapentes WHERE id = ?');
+    //     $query -> execute([$id]);
+    //     return $query->fetch(PDO::FETCH_OBJ);
+    // }
+
+    function deleteGliderById($id) {
+        $query = $this->db->prepare('DELETE FROM parapentes WHERE id = ?');
+        $query->execute([$id]);
     }
+
 }

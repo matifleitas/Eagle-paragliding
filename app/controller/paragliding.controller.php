@@ -12,18 +12,28 @@ class ParaglidingController {
         $this->model = new ParaglidingModel();
     }
 
-    function showLogin() { 
-        $this->view->Home(); 
-        //model
-    }
+
+    // function addGlider() {
+    //     // $name=$_POST[''];
+    //     // $description=$_POST[''];
+    //     // $difficulty=$_POST[''];
+
+    //     // $id = $this->model->insertGlider($name, $description, $difficulty);
+    // }
 
     function showGliders() {
-        $this->view->GliderLists();
-        //model
+        $gliders=$this->model->getAllGliders();
+        $this->view->GliderLists($gliders);
     }
 
-    function showAboutUs() {
-        $this->view->infoAboutUs();
-        //model
+    function deleteGlider($id) {
+        $this->model->deleteGliderById($id);
+        header("Location: " . BASE_URL);
     }
+
+
+    // function showAboutUs() {
+    //     $this->view->infoAboutUs();
+    //     //model
+    // }
 }

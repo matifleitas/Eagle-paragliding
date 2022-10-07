@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-05 16:42:41
+/* Smarty version 4.2.1, created on 2022-10-06 16:32:59
   from 'C:\xampp\htdocs\dashboard\Projects\TPE-especial\templates\homeLogin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_633d97e1638515_00310368',
+  'unifunc' => 'content_633ee71b73b384_58494296',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4a0b534e3a73e86971831d3c6d198ff8f3c273ef' => 
     array (
       0 => 'C:\\xampp\\htdocs\\dashboard\\Projects\\TPE-especial\\templates\\homeLogin.tpl',
-      1 => 1664977101,
+      1 => 1665066777,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_633d97e1638515_00310368 (Smarty_Internal_Template $_smarty_tpl) {
+function content_633ee71b73b384_58494296 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
@@ -45,12 +45,9 @@ function content_633d97e1638515_00310368 (Smarty_Internal_Template $_smarty_tpl)
             <label for="exampleInputPassword1" class="form-label">Contraseña</label>
             <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Ingresar contraseña">
             <span id="passwordHelpInline" class="form-label">Permitido entre 8 y 20 caracrteres.</span>
+            <button type="submit" class="btn btn-primary">Enviar</button>
         </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">No soy un robot</label>
         
-        <button type="submit" class="btn btn-primary">Enviar</button>
         </div>
     </form>
 

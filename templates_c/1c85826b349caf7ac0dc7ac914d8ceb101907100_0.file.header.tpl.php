@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-05 16:42:41
+/* Smarty version 4.2.1, created on 2022-10-07 16:36:36
   from 'C:\xampp\htdocs\dashboard\Projects\TPE-especial\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_633d97e162df73_58375709',
+  'unifunc' => 'content_634039741849e9_05616830',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1c85826b349caf7ac0dc7ac914d8ceb101907100' => 
     array (
       0 => 'C:\\xampp\\htdocs\\dashboard\\Projects\\TPE-especial\\templates\\header.tpl',
-      1 => 1664977101,
+      1 => 1665152888,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_633d97e162df73_58375709 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634039741849e9_05616830 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,8 +45,20 @@ function content_633d97e162df73_58375709 (Smarty_Internal_Template $_smarty_tpl)
         <li class="nav-item">
         <a class="nav-link active" aria-current="page" href="#"> Home </a>
         </li>
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Velas
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Tandem</a></li>
+                <li><a class="dropdown-item" href="#">Acro</a></li>
+                <li><a class="dropdown-item" href="#">Cross Country</a></li>
+            </ul>
+        </li>
+
         <li class="nav-item">
-        <a class="nav-link" href="#"> Velas </a>
+            <a class="nav-link" href="login.user.tpl"> Login </a>
         </li>
         <li class="nav-item">
         <a class="nav-link" href="#"> Quienes somos </a>
