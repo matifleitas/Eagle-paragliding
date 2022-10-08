@@ -11,15 +11,17 @@ class ParaglidingController {
         $this->view = new ParaglidingView(); 
         $this->model = new ParaglidingModel();
     }
-
-
     // function addGlider() {
     //     // $name=$_POST[''];
     //     // $description=$_POST[''];
     //     // $difficulty=$_POST[''];
 
     //     // $id = $this->model->insertGlider($name, $description, $difficulty);
+        // header("Location: " . BASE_URL);
     // }
+    function showHome() {
+        $this->view->ShowHomeEagle();
+    }
 
     function showGliders() {
         $gliders=$this->model->getAllGliders();
@@ -31,9 +33,8 @@ class ParaglidingController {
         header("Location: " . BASE_URL);
     }
 
-
-    // function showAboutUs() {
-    //     $this->view->infoAboutUs();
-    //     //model
-    // }
+    function showAboutUs() {
+        $this->view->infoAboutUs();
+    }
 }
+

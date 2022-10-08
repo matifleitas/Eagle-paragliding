@@ -19,13 +19,12 @@ class CheckController {
     public function verifyUser() {
         $email = $_POST['email'];
         $password = $_POST['password'];
-
+        
         // busco el usuario por email
         $user = $this->model->UserByEmail($email);
 
         if ($user && password_verify($password, $user->password)) {
 
-            // inicio una session para este usuario
             session_start();
             $_SESSION['id_user'] = $user->id;
             $_SESSION['email_user'] = $user->email;

@@ -9,6 +9,10 @@ class ParaglidingView {
         $this->smarty = new Smarty();
     }
 
+    function ShowHomeEagle() {
+        $this->smarty->assign('fraseHome', 'Solo necesitamos ayuda para estar de pie, no para volar');
+        $this->smarty->display('home.Eagle.tpl');
+    }
 
     function GliderLists($gliders) {
 
@@ -17,9 +21,8 @@ class ParaglidingView {
         $this->smarty->display('abm.velas.tpl');
     }
 
-//     function infoAboutUs() {
-//         $this->smarty->display(/*archivo de la info de nostros*/);
-//     }
-// }
+    function infoAboutUs() {
+        $this->smarty->display('about.us.tpl');
+    }
 
 }

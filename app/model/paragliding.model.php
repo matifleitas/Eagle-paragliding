@@ -25,7 +25,7 @@ class ParaglidingModel {
     // }
 
     function deleteGliderById($id) {
-        $query = $this->db->prepare('DELETE FROM parapentes WHERE id = ?');
+        $query = $this->db->prepare('DELETE FROM parapentes WHERE id_parapente = ?');
         $query->execute([$id]);
     }
 
