@@ -10,8 +10,13 @@ class ParaglidingView {
     }
 
     function ShowHomeEagle() {
-        $this->smarty->assign('fraseHome', 'Solo necesitamos ayuda para estar de pie, no para volar');
+        $this->smarty->assign('phraseHome', 'Solo necesitamos ayuda para estar de pie, no para volar');
         $this->smarty->display('home.Eagle.tpl');
+    }
+
+    function GliderById($glider) {
+        $this->smarty->assign('gliders', $glider);
+        $this->smarty->display('glider.byid.tpl');
     }
 
     function GliderLists($gliders) {
@@ -19,6 +24,10 @@ class ParaglidingView {
         $this->smarty->assign('title', 'Velas de Eagle paragliding');
         $this->smarty->assign('gliders', $gliders);
         $this->smarty->display('abm.velas.tpl');
+    }
+
+    function showFormsGliders() {
+        $this->smarty->display('form.glider.tpl');
     }
 
     function infoAboutUs() {

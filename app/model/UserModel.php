@@ -1,6 +1,7 @@
 <?php
 
 require_once'app/model/MainModel.php';
+
 class UserModel extends Model{
 
     public function UserByEmail($email) {

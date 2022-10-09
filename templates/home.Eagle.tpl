@@ -12,7 +12,7 @@
       <div class="carousel-item active">
       <img src="https://cloudfront-us-east-1.images.arcpublishing.com/infobae/5NHMBBJOKZDRJBQX26CJDCULIU.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <p class="h3">"{$fraseHome}"</p>
+        <p class="h3">"{$phraseHome}"</p>
         <p>Tienda de velas online de parapente</p>
       </div>
     </div>

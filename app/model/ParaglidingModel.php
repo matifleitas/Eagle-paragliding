@@ -12,22 +12,28 @@ class ParaglidingModel extends Model{
         return $gliders;
     }
 
-    
-    // public function getGliderbyId($id) {
+    public function getGliderbyId($id) {
 
-    //     $query = $this->db->prepare('SELECT name, description, difficulty, price FROM parapentes WHERE id = ?');
-    //     $query -> execute([$id]);
-    //     return $query->fetch(PDO::FETCH_OBJ);
-    // }
+        $query = $this->db->prepare('SELECT name, description, difficulty, price FROM parapentes WHERE id_parapente = ?');
+        $query -> execute([$id]);
+        return $query->fetch(PDO::FETCH_OBJ);
+    }
 
     function deleteGliderById($id) {
         $query = $this->db->prepare('DELETE FROM parapentes WHERE id_parapente = ?');
         $query->execute([$id]);
     }
 
-    function editGliderById($name, $description, $difficulty, $price, $id) {
-        $query = $this->db->prepare('UPDATE parapentes SET name= ?,description= ?, difficulty= ?, price= ? WHERE id_parapente = ?');
-        $query->execute([$name, $description, $difficulty, $price, $id]);
+    function addGliderByForm($name, $description, $difficulty, $price) {
+        $query = $this->db->prepare("INSERT INTO parapentes (name, description, difficulty, price) VALUES (?, ?, ?, ?)");
+        $query->execute([$name, $description, $difficulty, $price]);
+
+        return $this->db->lastInsertId();
     }
 
-}
+    // function editGliderById($name, $description, $difficulty, $price, $id) {
+    //     $query = $this->db->prepare('UPDATE parapentes SET name= ?,description= ?, difficulty= ?, price= ? WHERE id_parapente = ?');
+    //     $query->execute([$name, $description, $difficulty, $price, $id]);
+    // }
+
+} 

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-08 14:49:50
+/* Smarty version 4.2.1, created on 2022-10-09 14:51:16
   from 'C:\xampp\htdocs\dashboard\Projects\TPE-especial\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_634171ee980726_71028484',
+  'unifunc' => 'content_6342c3c4bc95f8_76029643',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1c85826b349caf7ac0dc7ac914d8ceb101907100' => 
     array (
       0 => 'C:\\xampp\\htdocs\\dashboard\\Projects\\TPE-especial\\templates\\header.tpl',
-      1 => 1665233331,
+      1 => 1665319874,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_634171ee980726_71028484 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6342c3c4bc95f8_76029643 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,13 +62,16 @@ function content_634171ee980726_71028484 (Smarty_Internal_Template $_smarty_tpl)
                 <li><a class="dropdown-item" href="#">Cross Country</a></li>
             </ul>
         </li>
-
-        <li class="nav-item">
-            <a class="nav-link" href="login"> Login </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="logout"> logout </a>
-        </li>
+        <?php if (!(isset($_SESSION['USER_ID']))) {?>
+            <li class="nav-item">
+                <a class="nav-link" href="login"> Login </a>
+            </li>
+        <?php } else { ?> 
+            <li class="nav-item">
+                <a class="nav-link" href="logout"> logout <?php echo $_SESSION['email_user'];?>
+ </a>
+            </li>
+        <?php }?>
         <li class="nav-item">
             <a class="nav-link" href="about-us"> Quienes somos </a>
         </li>

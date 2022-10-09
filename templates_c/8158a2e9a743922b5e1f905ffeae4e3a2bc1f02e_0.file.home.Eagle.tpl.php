@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-08 14:59:45
+/* Smarty version 4.2.1, created on 2022-10-09 15:13:00
   from 'C:\xampp\htdocs\dashboard\Projects\TPE-especial\templates\home.Eagle.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_63417441f1f353_36286817',
+  'unifunc' => 'content_6342c8dc3a9e86_99156676',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8158a2e9a743922b5e1f905ffeae4e3a2bc1f02e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\dashboard\\Projects\\TPE-especial\\templates\\home.Eagle.tpl',
-      1 => 1665233004,
+      1 => 1665321178,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_63417441f1f353_36286817 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6342c8dc3a9e86_99156676 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -37,7 +37,7 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
       <div class="carousel-item active">
       <img src="https://cloudfront-us-east-1.images.arcpublishing.com/infobae/5NHMBBJOKZDRJBQX26CJDCULIU.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <p class="h3">"<?php echo $_smarty_tpl->tpl_vars['fraseHome']->value;?>
+        <p class="h3">"<?php echo $_smarty_tpl->tpl_vars['phraseHome']->value;?>
 "</p>
         <p>Tienda de velas online de parapente</p>
       </div>

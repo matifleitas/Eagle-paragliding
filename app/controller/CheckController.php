@@ -19,21 +19,20 @@ class CheckController {
 
     public function verifyUser() {
         $email = $_POST['email'];
-        $password = $_POST['password'];
+        $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
         
-        // busco el usuario por email
         $user = $this->model->UserByEmail($email);
 
         if ($user && password_verify($password, $user->password)) {
 
             session_start();
-            $_SESSION['id_user'] = $user->id;
+            $_SESSION['id_user'] = $user->id_admin;
             $_SESSION['email_user'] = $user->email;
             $_SESSION['is_loged'] = true;
 
             header("Location: " . BASE_URL);
         } else {
-            // si los datos son incorrectos muestro el form con un erro
+            
            $this->view->FormLogin("El usuario o la contraseña no existe.");
         } 
 

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-08 13:07:55
+/* Smarty version 4.2.1, created on 2022-10-09 15:12:42
   from 'C:\xampp\htdocs\dashboard\Projects\TPE-especial\templates\login.user.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_63415a0bd45bc6_94552960',
+  'unifunc' => 'content_6342c8ca20dc78_05440995',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'daeed0b7fc24534df270ef0c1fa1c9a370084686' => 
     array (
       0 => 'C:\\xampp\\htdocs\\dashboard\\Projects\\TPE-especial\\templates\\login.user.tpl',
-      1 => 1665227274,
+      1 => 1665320911,
       2 => 'file',
     ),
   ),
@@ -22,12 +22,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_63415a0bd45bc6_94552960 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6342c8ca20dc78_05440995 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-
-<form action="" method="POST">
+<form action="verify" method="POST">
 <div class="mb-5"> 
     <label for="exampleInputEmail1" class="form-label">Email</label>
     <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Ingresar Email">

@@ -1,8 +1,7 @@
 
 {include file="header.tpl"}
 
-
-<form action="" method="POST">
+<form action="verify" method="POST">
 <div class="mb-5"> 
     <label for="exampleInputEmail1" class="form-label">Email</label>
     <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Ingresar Email">

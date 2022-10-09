@@ -31,16 +31,15 @@ switch ($params[0]){
         $paraglidingController->showHome();
         break;
 
-
     case 'gliders':
         $paraglidingController=new ParaglidingController();
         $paraglidingController->showGliders();
         break;
     
-    // case 'add':
-    //     $paraglidingController=new ParaglidingController();
-    //     $paraglidingController->addGlider();
-    //     break;
+    case 'glider':
+        $paraglidingController=new ParaglidingController();
+        $id = $params[1];
+        $paraglidingController->showOneGlider($id);
 
     case 'delete':
         $paraglidingController=new ParaglidingController();
@@ -52,15 +51,19 @@ switch ($params[0]){
         $paraglidingController=new ParaglidingController();
         $paraglidingController->showFormGliders();
 
-    case 'edit':
+    case 'add':
         $paraglidingController=new ParaglidingController();
-        $id = $params[1];
-        $paraglidingController->editGlider($id);
-        break;
+        $paraglidingController->addGlider();
+
+    // case 'edit':
+    //     $paraglidingController=new ParaglidingController();
+    //     $id = $params[1];
+    //     $paraglidingController->editGlider($id);
+    //     break;
     
     case 'about-us':
         $paraglidingController=new ParaglidingController();
-        $paraglidingController->showAbutUs();
+        $paraglidingController->showAboutUs();
         break;
 
      default:

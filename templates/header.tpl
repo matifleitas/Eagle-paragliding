@@ -38,13 +38,15 @@
                 <li><a class="dropdown-item" href="#">Cross Country</a></li>
             </ul>
         </li>
-
-        <li class="nav-item">
-            <a class="nav-link" href="login"> Login </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="logout"> logout </a>
-        </li>
+        {if !isset($smarty.session.USER_ID)}
+            <li class="nav-item">
+                <a class="nav-link" href="login"> Login </a>
+            </li>
+        {else} 
+            <li class="nav-item">
+                <a class="nav-link" href="logout"> logout {$smarty.session.email_user} </a>
+            </li>
+        {/if}
         <li class="nav-item">
             <a class="nav-link" href="about-us"> Quienes somos </a>
         </li>
