@@ -1,7 +1,8 @@
 <?php
 
-require_once'app/model/paragliding.model.php';
-require_once'app/view/paragliding.view.php';
+require_once'app/model/ParaglidingModel.php';
+require_once'app/model/MainModel.php';
+require_once'app/view/ParaglidingView.php';
 
 class ParaglidingController {
     private $model; //atributos
@@ -32,6 +33,22 @@ class ParaglidingController {
         $this->model->deleteGliderById($id);
         header("Location: " . BASE_URL);
     }
+
+    function editGlider($id) {
+        $name=$_POST['name'];
+        $description=$_POST['description'];
+        $difficulty=$_POST['difficulty'];
+        $price=$_POST['price'];
+
+        $this->model->editGliderById($name, $description, $difficulty, $price, $id);
+        
+        header("Location: " . BASE_URL);
+    }
+
+    function showformgliders() {
+        $this->view->showformsgliders();
+    }
+
 
     function showAboutUs() {
         $this->view->infoAboutUs();

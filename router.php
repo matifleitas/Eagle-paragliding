@@ -1,10 +1,10 @@
 <?php
-require_once 'app/controller/paragliding.controller.php';
-require_once 'app/controller/login.controller.php';
+require_once 'app/controller/ParaglidingController.php';
+require_once 'app/controller/CheckController.php';
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
-$action = 'login';
+$action = 'home';
 if (!empty($_GET['action'])) {
     $action = $_GET['action'];
 }
@@ -37,10 +37,10 @@ switch ($params[0]){
         $paraglidingController->showGliders();
         break;
     
-    case 'add':
-        $paraglidingController=new ParaglidingController();
-        $paraglidingController->addGlider();
-        break;
+    // case 'add':
+    //     $paraglidingController=new ParaglidingController();
+    //     $paraglidingController->addGlider();
+    //     break;
 
     case 'delete':
         $paraglidingController=new ParaglidingController();
@@ -48,15 +48,19 @@ switch ($params[0]){
         $paraglidingController->deleteGlider($id);
         break;
     
+    case 'form':
+        $paraglidingController=new ParaglidingController();
+        $paraglidingController->showFormGliders();
+
     case 'edit':
         $paraglidingController=new ParaglidingController();
-        $paraglidingController->editGlider();
         $id = $params[1];
+        $paraglidingController->editGlider($id);
         break;
     
     case 'about-us':
         $paraglidingController=new ParaglidingController();
-        $paraglidingController->showAboutUs();
+        $paraglidingController->showAbutUs();
         break;
 
      default:

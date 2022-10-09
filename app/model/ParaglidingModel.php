@@ -1,11 +1,7 @@
 <?php
+require_once'./app/model/MainModel.php';
 
-class ParaglidingModel {
-    private $db;
-
-    public function __construct() {
-        $this->db = new PDO('mysql:host=localhost;'.'dbname=eagle;charset=utf8', 'root', '');
-    }
+class ParaglidingModel extends Model{
 
     public function getAllGliders() {
         $query = $this->db->prepare("SELECT * FROM parapentes");
@@ -27,6 +23,11 @@ class ParaglidingModel {
     function deleteGliderById($id) {
         $query = $this->db->prepare('DELETE FROM parapentes WHERE id_parapente = ?');
         $query->execute([$id]);
+    }
+
+    function editGliderById($name, $description, $difficulty, $price, $id) {
+        $query = $this->db->prepare('UPDATE parapentes SET name= ?,description= ?, difficulty= ?, price= ? WHERE id_parapente = ?');
+        $query->execute([$name, $description, $difficulty, $price, $id]);
     }
 
 }

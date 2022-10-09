@@ -1,7 +1,8 @@
 <?php
 
-require_once'app/model/login.model.php';
-require_once'app/view/login.view.php';
+require_once'app/model/MainModel.php';
+require_once'app/model/UserModel.php';
+require_once'app/view/UserView.php';
 
 class CheckController {
     private $model;
