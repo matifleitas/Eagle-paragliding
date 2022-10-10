@@ -1,8 +1,18 @@
   
 <form action="add" method="POST">
   <div class="mb-2">
+    <label for="floatingInput" class="form-label">id: </label>
+    <input type="text" class="form-control" id="id" name="id" placeholder="Id de la vela">
+  </div>
+
+  <div class="mb-2">
     <label for="floatingInput" class="form-label">Nombre: </label>
     <input type="text" class="form-control" id="name" name="name" placeholder="Nombre de la vela">
+  </div>
+
+  <div class="mb-2">
+    <label for="floatingInput" class="form-label">Categoria: </label>
+    <input type="text" class="form-control" id="category" name="category" placeholder="Categoria de la vela">
   </div>
 
   <div class="mb-3">

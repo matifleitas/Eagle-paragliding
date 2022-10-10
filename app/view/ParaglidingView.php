@@ -26,6 +26,11 @@ class ParaglidingView {
         $this->smarty->display('abm.velas.tpl');
     }
 
+    function GlidersCategory ($categories) {
+        $this->smarty->assign('categories', $categories);
+        $this->smarty->display('abm.gliderby-category.tpl');
+    }
+
     function showFormsGliders() {
         $this->smarty->display('form.glider.tpl');
     }

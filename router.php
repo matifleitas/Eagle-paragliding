@@ -1,4 +1,5 @@
 <?php
+
 require_once 'app/controller/ParaglidingController.php';
 require_once 'app/controller/CheckController.php';
 
@@ -12,7 +13,7 @@ if (!empty($_GET['action'])) {
 $params = explode('/', $action); 
 
 
-switch ($params[0]){
+switch ($params[0]) {
     case 'login':
         $checkController = new CheckController();
         $checkController->showFormLogin();
@@ -35,11 +36,16 @@ switch ($params[0]){
         $paraglidingController=new ParaglidingController();
         $paraglidingController->showGliders();
         break;
-    
-    case 'glider':
+
+    case 'category':
         $paraglidingController=new ParaglidingController();
         $id = $params[1];
-        $paraglidingController->showOneGlider($id);
+        $paraglidingController->showByCategory($id);
+    
+    // case 'glider':
+    //     $paraglidingController=new ParaglidingController();
+    //     $id = $params[1];
+    //     $paraglidingController->showOneGlider($id);
 
     case 'delete':
         $paraglidingController=new ParaglidingController();

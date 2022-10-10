@@ -1,7 +1,7 @@
 <?php
 require_once'./app/model/MainModel.php';
 
-class ParaglidingModel extends Model{
+class ParaglidingModel extends Model {
 
     public function getAllGliders() {
         $query = $this->db->prepare("SELECT * FROM parapentes");
@@ -12,21 +12,30 @@ class ParaglidingModel extends Model{
         return $gliders;
     }
 
-    public function getGliderbyId($id) {
-
-        $query = $this->db->prepare('SELECT name, description, difficulty, price FROM parapentes WHERE id_parapente = ?');
+    public function getGlidersCategory($id) {
+        $query = $this->db->prepare('SELECT a.* FROM parapentes a
+        INNER JOIN categoria b ON a.type_paraglider = b.type_paraglider
+        WHERE b.type_paraglider = ?');
         $query -> execute([$id]);
-        return $query->fetch(PDO::FETCH_OBJ);
+        return $query->fetchAll(PDO::FETCH_OBJ);
+
     }
+
+    // public function getGliderbyId($id) {
+
+    //     $query = $this->db->prepare('SELECT name, description, difficulty, price FROM parapentes WHERE id_parapente = ?');
+    //     $query -> execute([$id]);
+    //     return $query->fetch(PDO::FETCH_OBJ);
+    // }
 
     function deleteGliderById($id) {
         $query = $this->db->prepare('DELETE FROM parapentes WHERE id_parapente = ?');
         $query->execute([$id]);
     }
 
-    function addGliderByForm($name, $description, $difficulty, $price) {
-        $query = $this->db->prepare("INSERT INTO parapentes (name, description, difficulty, price) VALUES (?, ?, ?, ?)");
-        $query->execute([$name, $description, $difficulty, $price]);
+    function addGliderByForm($id, $name, $category, $description, $difficulty, $price) {
+        $query = $this->db->prepare("INSERT INTO parapentes (id_parapente, name, type_paraglider, description, difficulty, price) VALUES (?, ?, ?, ?, ?, ?)");
+        $query->execute([$id, $name, $category, $description, $difficulty, $price]);
 
         return $this->db->lastInsertId();
     }

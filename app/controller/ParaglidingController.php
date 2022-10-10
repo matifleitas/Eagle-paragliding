@@ -22,11 +22,16 @@ class ParaglidingController {
         $this->view->GliderLists($gliders);
     }
 
-    function showOneGlider($id) {
-        $glider=$this->model->getGliderbyId($id);
-        $this->view->GliderById($glider);
-        header("Location: " . BASE_URL);
+    function showByCategory($id) {
+        $categories=$this->model->getGlidersCategory($id);
+        $this->view->GlidersCategory($categories);
     }
+
+    // function showOneGlider($id) {
+    //     $glider=$this->model->getGliderbyId($id);
+    //     $this->view->GliderById($glider);
+    //     header("Location: " . BASE_URL);
+    // }
 
     function deleteGlider($id) {
         $this->model->deleteGliderById($id);
@@ -34,12 +39,14 @@ class ParaglidingController {
     }
 
     function addGlider() {
+        $id=$_POST['id'];
         $name=$_POST['name'];
+        $category=$_POST['category'];
         $description=$_POST['description'];
         $difficulty=$_POST['difficulty'];
         $price=$_POST['price'];
 
-        $this->model->addGliderByForm($name, $description, $difficulty, $price);
+        $this->model->addGliderByForm($id, $name, $category, $description, $difficulty, $price);
         header("Location: " . BASE_URL);
     }
 

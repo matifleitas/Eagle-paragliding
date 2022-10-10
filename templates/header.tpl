@@ -33,9 +33,9 @@
             </a>
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="gliders">Todas</a></li>
-                <li><a class="dropdown-item" href="#">Tandem</a></li>
-                <li><a class="dropdown-item" href="#">Acro</a></li>
-                <li><a class="dropdown-item" href="#">Cross Country</a></li>
+                <li><a class="dropdown-item" href="category">Tandem</a></li>
+                <li><a class="dropdown-item" href="category">Acro</a></li>
+                <li><a class="dropdown-item" href="category">Cross Country</a></li>
             </ul>
         </li>
         {if !isset($smarty.session.USER_ID)}

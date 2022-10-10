@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-09 14:51:16
+/* Smarty version 4.2.1, created on 2022-10-10 03:16:44
   from 'C:\xampp\htdocs\dashboard\Projects\TPE-especial\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_6342c3c4bc95f8_76029643',
+  'unifunc' => 'content_6343727cd6a446_03100149',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1c85826b349caf7ac0dc7ac914d8ceb101907100' => 
     array (
       0 => 'C:\\xampp\\htdocs\\dashboard\\Projects\\TPE-especial\\templates\\header.tpl',
-      1 => 1665319874,
+      1 => 1665363779,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6342c3c4bc95f8_76029643 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6343727cd6a446_03100149 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,9 +57,9 @@ function content_6342c3c4bc95f8_76029643 (Smarty_Internal_Template $_smarty_tpl)
             </a>
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="gliders">Todas</a></li>
-                <li><a class="dropdown-item" href="#">Tandem</a></li>
-                <li><a class="dropdown-item" href="#">Acro</a></li>
-                <li><a class="dropdown-item" href="#">Cross Country</a></li>
+                <li><a class="dropdown-item" href="category">Tandem</a></li>
+                <li><a class="dropdown-item" href="category">Acro</a></li>
+                <li><a class="dropdown-item" href="category">Cross Country</a></li>
             </ul>
         </li>
         <?php if (!(isset($_SESSION['USER_ID']))) {?>
