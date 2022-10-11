@@ -30,6 +30,12 @@
     <input type="text" class="form-control" id="price" name="price" placeholder="Precio de la vela">
   </div>
 
+  <div class="mb-2">
+    <label for="floatingInput" class="form-label">ID_fk: </label>
+    <input type="text" class="form-control" id="ID_fk" name="ID_fk" placeholder="Precio de la vela">
+</div>
+
+
   <button type="submit" class="btn btn-info">Agregar</button>
 </form>
 

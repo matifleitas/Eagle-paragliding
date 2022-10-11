@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-10 03:16:44
+/* Smarty version 4.2.1, created on 2022-10-11 03:02:57
   from 'C:\xampp\htdocs\dashboard\Projects\TPE-especial\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_6343727cd6a446_03100149',
+  'unifunc' => 'content_6344c0c165e8e9_46805624',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1c85826b349caf7ac0dc7ac914d8ceb101907100' => 
     array (
       0 => 'C:\\xampp\\htdocs\\dashboard\\Projects\\TPE-especial\\templates\\header.tpl',
-      1 => 1665363779,
+      1 => 1665450101,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6343727cd6a446_03100149 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6344c0c165e8e9_46805624 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,9 +57,18 @@ function content_6343727cd6a446_03100149 (Smarty_Internal_Template $_smarty_tpl)
             </a>
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="gliders">Todas</a></li>
-                <li><a class="dropdown-item" href="category">Tandem</a></li>
-                <li><a class="dropdown-item" href="category">Acro</a></li>
-                <li><a class="dropdown-item" href="category">Cross Country</a></li>
+                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['categories']->value, 'category');
+$_smarty_tpl->tpl_vars['category']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['category']->value) {
+$_smarty_tpl->tpl_vars['category']->do_else = false;
+?>
+                    <li><a class="dropdown-item" href="category/<?php echo $_smarty_tpl->tpl_vars['category']->value->id_category;?>
+"><?php echo $_smarty_tpl->tpl_vars['category']->value->type_paraglider;?>
+</a></li>
+                <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             </ul>
         </li>
         <?php if (!(isset($_SESSION['USER_ID']))) {?>

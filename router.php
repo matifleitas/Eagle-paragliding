@@ -2,6 +2,7 @@
 
 require_once 'app/controller/ParaglidingController.php';
 require_once 'app/controller/CheckController.php';
+require_once 'app/controller/CategoryController.php';
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
@@ -12,7 +13,6 @@ if (!empty($_GET['action'])) {
 
 $params = explode('/', $action); 
 
-
 switch ($params[0]) {
     case 'login':
         $checkController = new CheckController();
@@ -22,10 +22,12 @@ switch ($params[0]) {
     case 'logout':
         $checkController = new CheckController();
         $checkController->logoutUser();
+        break;
 
     case 'verify':
         $checkController = new CheckController();
         $checkController->verifyUser();
+        break;
     
     case 'home':
         $paraglidingController=new ParaglidingController();
@@ -38,14 +40,15 @@ switch ($params[0]) {
         break;
 
     case 'category':
-        $paraglidingController=new ParaglidingController();
+        $categoryController=new CategoryController();
         $id = $params[1];
-        $paraglidingController->showByCategory($id);
+        $categoryController->showByCategory($id);
+        break;
     
-    // case 'glider':
-    //     $paraglidingController=new ParaglidingController();
-    //     $id = $params[1];
-    //     $paraglidingController->showOneGlider($id);
+    case 'glider':
+         $paraglidingController=new ParaglidingController();
+         $id = $params[1];
+         $paraglidingController->showOneGlider($id);
 
     case 'delete':
         $paraglidingController=new ParaglidingController();
@@ -56,10 +59,12 @@ switch ($params[0]) {
     case 'form':
         $paraglidingController=new ParaglidingController();
         $paraglidingController->showFormGliders();
+        break;
 
     case 'add':
         $paraglidingController=new ParaglidingController();
         $paraglidingController->addGlider();
+        break;
 
     // case 'edit':
     //     $paraglidingController=new ParaglidingController();

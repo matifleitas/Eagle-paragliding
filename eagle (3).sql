@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-10-2022 a las 15:08:03
+-- Tiempo de generación: 11-10-2022 a las 03:31:30
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -24,21 +24,23 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `admin`
+-- Estructura de tabla para la tabla `administrator`
 --
 
-CREATE TABLE `admin` (
+CREATE TABLE `administrator` (
   `id_admin` int(11) NOT NULL,
   `email` varchar(45) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `admin`
+-- Volcado de datos para la tabla `administrator`
 --
 
-INSERT INTO `admin` (`id_admin`, `email`, `password`) VALUES
-(1, 'matias.fleitas@gmail.com', 'holamundo123');
+INSERT INTO `administrator` (`id_admin`, `email`, `password`) VALUES
+(2, 'matias.fleitas@gmail.com', '$2a$12$lc4LDK0lXzJayVMHgxb66e2wQnnAZtnzVGBxdy.tSGPunfOrc/PLO\r\n'),
+(3, 'juan.apellido@gmail.com', '$2y$10$vnwKvlFhygQbM.gO8qyghuBctyhcM764KgbCzjKqpVMI7X9lN1rJu'),
+(4, 'matifleitas@gmail.com', '12345');
 
 -- --------------------------------------------------------
 
@@ -56,7 +58,9 @@ CREATE TABLE `categoria` (
 --
 
 INSERT INTO `categoria` (`id_category`, `type_paraglider`) VALUES
-(1, 'Acro');
+(7, 'Tandem'),
+(8, 'Acro'),
+(9, 'Cross Country');
 
 -- --------------------------------------------------------
 
@@ -67,73 +71,76 @@ INSERT INTO `categoria` (`id_category`, `type_paraglider`) VALUES
 CREATE TABLE `parapentes` (
   `id_parapente` int(11) NOT NULL,
   `name` varchar(45) NOT NULL,
-  `description` varchar(255) NOT NULL,
+  `type_paraglider` varchar(45) NOT NULL,
+  `description` varchar(355) NOT NULL,
+  `image` varchar(50) NOT NULL,
   `difficulty` varchar(45) NOT NULL,
-  `price` int(11) NOT NULL
+  `price` int(11) NOT NULL,
+  `id_category_fk` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `parapentes`
 --
 
-INSERT INTO `parapentes` (`id_parapente`, `name`, `description`, `difficulty`, `price`) VALUES
-(1, 'Ommikron', 'Vela de acrobacio. La clase CCC es la mejor representación de lo que puede ser un parapente moderno. Todo se lleva al límite, pero respetando los márgenes de seguridad. Una combinación única que es muy, muy difícil de crear y afinar. Es por eso que solo h', 'Medium', 2500),
-(2, 'Icaro', 'Vela de alto rendimiento. Este parapente es un concepto único. A pesar del impresionante AR de 7,85 y muchas celdas (128), este parapente sigue siendo fácil de manejar para su categoría. Tiene una estabilidad sorprendente, incluso en vuelo acelerado, y es', 'Dificil', 1600);
+INSERT INTO `parapentes` (`id_parapente`, `name`, `type_paraglider`, `description`, `image`, `difficulty`, `price`, `id_category_fk`) VALUES
+(3, 'Artik', 'Cross Country', 'fd knmjojcm nivhj jn', '', 'Facil', 2600, 9),
+(5, 'ommikron', 'Acro', 'jhhjhuh jnh gb gjv lk ouih', '', 'Dificil', 3000, 8);
 
 --
 -- Índices para tablas volcadas
 --
 
 --
--- Indices de la tabla `admin`
+-- Indices de la tabla `administrator`
 --
-ALTER TABLE `admin`
+ALTER TABLE `administrator`
   ADD PRIMARY KEY (`id_admin`);
 
 --
 -- Indices de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  ADD PRIMARY KEY (`id_category`),
-  ADD KEY `type_paraglider` (`type_paraglider`);
+  ADD PRIMARY KEY (`id_category`);
 
 --
 -- Indices de la tabla `parapentes`
 --
 ALTER TABLE `parapentes`
-  ADD PRIMARY KEY (`id_parapente`);
+  ADD PRIMARY KEY (`id_parapente`),
+  ADD KEY `id_category_fk` (`id_category_fk`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT de la tabla `admin`
+-- AUTO_INCREMENT de la tabla `administrator`
 --
-ALTER TABLE `admin`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `administrator`
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `id_category` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_category` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `parapentes`
 --
 ALTER TABLE `parapentes`
-  MODIFY `id_parapente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_parapente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Restricciones para tablas volcadas
 --
 
 --
--- Filtros para la tabla `categoria`
+-- Filtros para la tabla `parapentes`
 --
-ALTER TABLE `categoria`
-  ADD CONSTRAINT `categoria_ibfk_1` FOREIGN KEY (`id_category`) REFERENCES `parapentes` (`id_parapente`);
+ALTER TABLE `parapentes`
+  ADD CONSTRAINT `parapentes_ibfk_1` FOREIGN KEY (`id_category_fk`) REFERENCES `categoria` (`id_category`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

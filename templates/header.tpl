@@ -33,9 +33,9 @@
             </a>
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="gliders">Todas</a></li>
-                <li><a class="dropdown-item" href="category">Tandem</a></li>
-                <li><a class="dropdown-item" href="category">Acro</a></li>
-                <li><a class="dropdown-item" href="category">Cross Country</a></li>
+                {foreach from=$categories item=$category}
+                    <li><a class="dropdown-item" href="category/{$category->id_category}">{$category->type_paraglider}</a></li>
+                {/foreach}
             </ul>
         </li>
         {if !isset($smarty.session.USER_ID)}
