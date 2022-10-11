@@ -13,7 +13,8 @@ class CategoryView {
         $this->smarty->assign('categories', $categories);
     }
 
-    function GliderByCategory($categories) {
+    function GliderByCategory($categoriesId, $categories) {
+        $this->smarty->assign('categoriesId', $categoriesId);
         $this->smarty->assign('categories', $categories);
         $this->smarty->display('abm.gliderby-category.tpl');
     }

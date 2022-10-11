@@ -7,17 +7,22 @@ require_once'app/view/UserView.php';
 class CheckController {
     private $model;
     private $view;
+    private $categoryModel;
 
     public function __construct() {
         $this->model = new UserModel();
         $this->view = new UserView();
+        $this->categoryModel = new CategoryModel();
     }
 
     public function showFormLogin() {
-        $this->view->FormLogin();
+        $categories= $this->categoryModel->getAllCategories();
+        $this->view->FormLogin($categories);
     }
 
     public function verifyUser() {
+        $categories= $this->categoryModel->getAllCategories();
+
         $email = $_POST['email'];
         $password = $_POST['password'];
         
@@ -25,7 +30,6 @@ class CheckController {
         
         
         if ($user && password_verify($password, $user->password)) {
-            
             session_start();
             $_SESSION['id_user'] = $user->id_admin;
             $_SESSION['email_user'] = $user->email;
@@ -34,9 +38,8 @@ class CheckController {
         } 
         else {
             
-           $this->view->FormLogin("El usuario o la contraseña no existe.");
+           $this->view->FormLogin($categories, "El usuario o la contraseña no existe.");
         } 
-
     }
 
     public function logoutUser() {

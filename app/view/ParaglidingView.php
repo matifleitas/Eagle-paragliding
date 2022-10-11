@@ -9,9 +9,10 @@ class ParaglidingView {
         $this->smarty = new Smarty();
     }
 
-    function ShowHomeEagle() {
+    function ShowHomeEagle($categories) {
         $this->smarty->assign('phraseHome', 'Solo necesitamos ayuda para estar de pie, no para volar');
         $this->smarty->assign('tienda', 'Tienda online de velas de parapentes');
+        $this->smarty->assign('categories', $categories);
         $this->smarty->display('home.Eagle.tpl');
     }
 

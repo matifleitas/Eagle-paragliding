@@ -17,7 +17,8 @@ class ParaglidingController {
     }
 
     function showHome() {
-        $this->view->ShowHomeEagle();
+        $categories= $this->categoryModel->getAllCategories();
+        $this->view->ShowHomeEagle($categories);
     }
 
     function showGliders() {

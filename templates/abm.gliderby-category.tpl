@@ -3,7 +3,7 @@
 
 <h1 class="display-6"></h1>
   <ul class="list-group list-group-numbered">
-  {foreach from=$categories item=$category}
+  {foreach from=$categoriesId item=$category}
       
     <li class="list-group-item d-flex justify-content-between align-items-start">
       <a href="glider">{$category->name}:</a> 

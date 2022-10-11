@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-11 02:57:06
+/* Smarty version 4.2.1, created on 2022-10-11 04:26:15
   from 'C:\xampp\htdocs\dashboard\Projects\TPE-especial\templates\abm.gliderby-category.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_6344bf62c98270_24466685',
+  'unifunc' => 'content_6344d447e85e03_86533138',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '67f3b6a431165a046903e83b2d98d9863d078b0e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\dashboard\\Projects\\TPE-especial\\templates\\abm.gliderby-category.tpl',
-      1 => 1665449794,
+      1 => 1665455173,
       2 => 'file',
     ),
   ),
@@ -22,14 +22,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6344bf62c98270_24466685 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6344d447e85e03_86533138 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
 <h1 class="display-6"></h1>
   <ul class="list-group list-group-numbered">
   <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['categories']->value, 'category');
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['categoriesId']->value, 'category');
 $_smarty_tpl->tpl_vars['category']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['category']->value) {
 $_smarty_tpl->tpl_vars['category']->do_else = false;
