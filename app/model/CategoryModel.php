@@ -13,7 +13,7 @@ class CategoryModel extends Model {
     }
 
     function getGliderById($id) {
-        $query = $this->db->prepare('SELECT parapentes.name, parapentes.type_paraglider, parapentes.description, parapentes.difficulty, parapentes.price, categoria.type_paraglider
+        $query = $this->db->prepare('SELECT parapentes.name, parapentes.type_paraglider, parapentes.description, parapentes.image, parapentes.difficulty, parapentes.price, categoria.type_paraglider
         FROM parapentes JOIN categoria
         ON parapentes.id_category_fk = categoria.id_category WHERE parapentes.id_category_fk = ?');
 

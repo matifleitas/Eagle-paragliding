@@ -38,13 +38,13 @@
                 {/foreach}
             </ul>
         </li>
-        {if !isset($smarty.session.USER_ID)}
+        {if !isset($smarty.session.id_user)}
             <li class="nav-item">
                 <a class="nav-link" href="login"> Login </a>
             </li>
         {else} 
             <li class="nav-item">
-                <a class="nav-link" href="logout"> logout {$smarty.session.email_user} </a>
+                <a class="nav-link" href="logout"> logout ({$smarty.session.email_user}) </a>
             </li>
         {/if}
         <li class="nav-item">

@@ -29,13 +29,15 @@ class ParaglidingView {
         $this->smarty->display('abm.velas.tpl');
     }
 
-    // function GlidersCategory ($categories) {
-    //     $this->smarty->assign('categories', $categories);
-    //     $this->smarty->display('abm.gliderby-category.tpl');
-    // }
-
     function showFormsGliders() {
         $this->smarty->display('form.glider.tpl');
+    }
+
+    function showUpdateForm($glider){
+        $this->smarty->assign('glider', $glider);
+        $this->smarty->display('header.tpl');
+        $this->smarty->display('form.update.tpl');
+        $this->smarty->display('footer.tpl');
     }
 
     function infoAboutUs() {

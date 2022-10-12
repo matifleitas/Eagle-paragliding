@@ -46,9 +46,9 @@ switch ($params[0]) {
         break;
     
     case 'glider':
-         $paraglidingController=new ParaglidingController();
-         $id = $params[1];
-         $paraglidingController->showOneGlider($id);
+        $paraglidingController=new ParaglidingController();
+        $id = $params[1];
+        $paraglidingController->showOneGlider($id);
 
     case 'delete':
         $paraglidingController=new ParaglidingController();
@@ -66,20 +66,27 @@ switch ($params[0]) {
         $paraglidingController->addGlider();
         break;
 
-    // case 'edit':
-    //     $paraglidingController=new ParaglidingController();
-    //     $id = $params[1];
-    //     $paraglidingController->editGlider($id);
-    //     break;
-    
+    case 'edit':
+        $paraglidingController=new ParaglidingController();
+        $id = $params[1];
+        $paraglidingController->editGlider($id);
+        break;
+
+    case 'updated':
+        $paraglidingController=new ParaglidingController();
+        $id = $params[1];
+        $paraglidingController->sendGliderUpdate($id);
+        break;
+
+
     case 'about-us':
         $paraglidingController=new ParaglidingController();
         $paraglidingController->showAboutUs();
         break;
 
      default:
+        $paraglidingController=new ParaglidingController();
         echo "404 not found";
-
         break;
 }
 

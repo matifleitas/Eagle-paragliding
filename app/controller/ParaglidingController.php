@@ -33,7 +33,7 @@ class ParaglidingController {
     // }
 
     function showOneGlider($id) {
-        $glider=$this->model->getGliderbyId($id);
+        $glider=$this->model->getoneGliderbyId($id);
         $this->view->GliderById($glider);
         
         // header("Location: " . BASE_URL . );
@@ -49,32 +49,47 @@ class ParaglidingController {
         $name=$_POST['name'];
         $category=$_POST['category'];
         $description=$_POST['description'];
+        $url=$_POST['URL'];
         $difficulty=$_POST['difficulty'];
         $price=$_POST['price'];
         $id_fk=$_POST['ID_fk'];
 
-        $this->model->addGliderByForm($id, $name, $category, $description, $difficulty, $price, $id_fk);
+        $this->model->addGliderByForm($id, $name, $category, $description, $url, $difficulty, $price, $id_fk);
+        header("Location: " . BASE_URL . "home");
+    }
+
+    function editGlider($id) {
+
+        // $id_paraglider=$_POST['id'];
+        // $name=$_POST['name'];
+        // $category=$_POST['category'];
+        // $description=$_POST['description'];
+        // $difficulty=$_POST['difficulty'];
+        // $price=$_POST['price'];
+        // $id_fk=$_POST['ID_fk'];
+        $glider=$this->model->editGliderById($id);
+        $this->view->showUpdateForm($glider);
+
         header("Location: " . BASE_URL);
     }
 
-    // function editGlider($id) {
+    function sendGliderUpdate($id) {
+        $id_paraglider=$_POST['id'];
+        $name=$_POST['name'];
+        $category=$_POST['category'];
+        $description=$_POST['description'];
+        $url=$_POST['image'];
+        $difficulty=$_POST['difficulty'];
+        $price=$_POST['price'];
+        $id_fk=$_POST['ID_fk'];
 
-    //     $id_paraglider=$_POST['id'];
-    //     $name=$_POST['name'];
-    //     $category=$_POST['category'];
-    //     $description=$_POST['description'];
-    //     $difficulty=$_POST['difficulty'];
-    //     $price=$_POST['price'];
-
-    //     $this->model->editGliderById($id_paraglider, $name, $category, $description, $difficulty, $price, $id);
-        
-    //     header("Location: " . BASE_URL);
-    // }
+        $this->model->updateGliderById($id, $name, $category, $description, $url, $difficulty, $price, $id_fk);
+        header("Location: " . BASE_URL .'home');
+    }
 
     function showformgliders() {
         $this->view->showFormsGliders();
     }
-
 
     function showAboutUs() {
         $this->view->infoAboutUs();

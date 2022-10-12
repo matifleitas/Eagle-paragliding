@@ -8,9 +8,15 @@
     {foreach from=$gliders item=$glider}
       
     <li class="list-group-item d-flex justify-content-between align-items-start">
-      <a href="glider">{$glider->name}:</a> 
-      <div><img src="https://justacro.com/files/styles/video_preview/public/gear/glider/photo/image10dsc00216.jpg.res-800x600.jpg?itok=QCxvWndn" class="rounded float-end" alt="..."></div>
-          <span>{$glider->description} - Dificultad: {$glider->difficulty} - Precio: {$glider->price}</span>
+      <a href="glider/{$glider->id_parapente}" class="fw-bold">{$glider->name}: </a> 
+      <div><img src="{$glider->image}" class="img-thumbnail" alt="..."></div>
+        <span class="fw-bold">
+          ●Description: <p class="fw-semibold">{$glider->description}</p> 
+          <br>
+          ●Dificultad: <p class="fw-semibold">{$glider->difficulty}</p>
+          <br> 
+          ●Precio: <p class="fw-semibold">{$glider->price}</p>
+        </span>
       
       <a href='edit/{$glider->id_parapente}' type='button' class="btn btn-outline-primary">Editar</a>
       <a href='delete/{$glider->id_parapente}' type='button' class="btn btn-outline-danger">Borrar</a>
