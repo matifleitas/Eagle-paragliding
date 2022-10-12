@@ -1,7 +1,7 @@
 
-{include file="header.tpl"}
+{* {include file="header.tpl"}
 
-{include file="form.gliders.tpl"}
+{include file="form.gliders.tpl"} *}
 
 <h1 class="display-6">{$title}</h1>
   <ul class="list-group list-group-numbered">
@@ -11,6 +11,8 @@
       <a href="glider/{$glider->id_parapente}" class="fw-bold">{$glider->name}: </a> 
       <div><img src="{$glider->image}" class="img-thumbnail" alt="..."></div>
         <span class="fw-bold">
+          ●Categoria de la vela: <p class="fw-semibold">{$glider->type_paraglider}</p> 
+          <br>
           ●Description: <p class="fw-semibold">{$glider->description}</p> 
           <br>
           ●Dificultad: <p class="fw-semibold">{$glider->difficulty}</p>

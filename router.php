@@ -56,10 +56,10 @@ switch ($params[0]) {
         $paraglidingController->deleteGlider($id);
         break;
     
-    case 'form':
-        $paraglidingController=new ParaglidingController();
-        $paraglidingController->showFormGliders();
-        break;
+    // case 'form':
+    //     $categoryController=new CategoryController();
+    //     $categoryController->showformgliders();
+    //     break;
 
     case 'add':
         $paraglidingController=new ParaglidingController();
@@ -77,7 +77,6 @@ switch ($params[0]) {
         $id = $params[1];
         $paraglidingController->sendGliderUpdate($id);
         break;
-
 
     case 'about-us':
         $paraglidingController=new ParaglidingController();

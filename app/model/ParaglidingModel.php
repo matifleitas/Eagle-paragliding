@@ -36,9 +36,9 @@ class ParaglidingModel extends Model {
         $query->execute([$id]);
     }
 
-    function addGliderByForm($id, $name, $category, $description, $url, $difficulty, $price, $id_fk) {
-        $query = $this->db->prepare("INSERT INTO parapentes (id_parapente, name, type_paraglider, description, image, difficulty, price, id_category_fk) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-        $query->execute([$id, $name, $category, $description, $url, $difficulty, $price, $id_fk]);
+    function addGliderByForm($name, $category, $description, $url, $difficulty, $price, $id_fk) {
+        $query = $this->db->prepare("INSERT INTO parapentes (name, type_paraglider, description, image, difficulty, price, id_category_fk) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        $query->execute([$name, $category, $description, $url, $difficulty, $price, $id_fk]);
 
         return $this->db->lastInsertId();
     }

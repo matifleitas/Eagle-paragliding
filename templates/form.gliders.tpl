@@ -1,9 +1,9 @@
   
 <form action="add" method="POST">
-  <div class="mb-2">
+  {* <div class="mb-2">
     <label for="floatingInput" class="form-label">id: </label>
     <input type="text" class="form-control" id="id" name="id" placeholder="Id de la vela">
-  </div>
+  </div> *}
 
   <div class="mb-2">
     <label for="floatingInput" class="form-label">Nombre: </label>
@@ -12,7 +12,12 @@
 
   <div class="mb-2">
     <label for="floatingInput" class="form-label">Categoria: </label>
-    <input type="text" class="form-control" id="category" name="category" placeholder="Categoria de la vela">
+        <select class="form-select" name="category" id="">
+        <option selected disabled>Seleccionar la categoria de la nueva vela: </option>
+        {foreach $categories as $category}
+            <option value="{$category->type_paraglider}">{$category->type_paraglider}</option>
+        {/foreach}
+    </select>
   </div>
 
   <div class="mb-3">

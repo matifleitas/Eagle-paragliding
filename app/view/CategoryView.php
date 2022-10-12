@@ -18,4 +18,9 @@ class CategoryView {
         $this->smarty->assign('categories', $categories);
         $this->smarty->display('abm.gliderby-category.tpl');
     }
+
+    // function showFormsGliders($categories) {
+    //     $this->smarty->assign('categories', $categories);
+    //     $this->smarty->display('form.gliders.tpl');
+    // }
 }

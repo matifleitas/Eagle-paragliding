@@ -45,7 +45,7 @@ class ParaglidingController {
     }
 
     function addGlider() {
-        $id=$_POST['id'];
+        // $id=$_POST['id'];
         $name=$_POST['name'];
         $category=$_POST['category'];
         $description=$_POST['description'];
@@ -54,7 +54,7 @@ class ParaglidingController {
         $price=$_POST['price'];
         $id_fk=$_POST['ID_fk'];
 
-        $this->model->addGliderByForm($id, $name, $category, $description, $url, $difficulty, $price, $id_fk);
+        $this->model->addGliderByForm($name, $category, $description, $url, $difficulty, $price, $id_fk);
         header("Location: " . BASE_URL . "home");
     }
 
@@ -87,9 +87,10 @@ class ParaglidingController {
         header("Location: " . BASE_URL .'home');
     }
 
-    function showformgliders() {
-        $this->view->showFormsGliders();
-    }
+    // function showformgliders() {
+    //     $categories=$this->model->getAllcategoriesForm();
+    //     $this->view->showFormsGliders($categories);
+    // }
 
     function showAboutUs() {
         $this->view->infoAboutUs();

@@ -26,4 +26,9 @@ class CategoryController {
         $this->view->GliderByCategory($categoriesId, $categories);
 
     }
+
+    // function showformgliders() {
+    //     $categories=$this->model->getAllCategories();
+    //     $this->view->showFormsGliders($categories);
+    // }
 }

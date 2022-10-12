@@ -26,11 +26,9 @@ class ParaglidingView {
         $this->smarty->assign('title', 'Velas de Eagle paragliding');
         $this->smarty->assign('gliders', $gliders);
         $this->smarty->assign('categories', $categories);
+        $this->smarty->display('header.tpl');
+        $this->smarty->display('form.gliders.tpl');
         $this->smarty->display('abm.velas.tpl');
-    }
-
-    function showFormsGliders() {
-        $this->smarty->display('form.glider.tpl');
     }
 
     function showUpdateForm($glider){
