@@ -45,7 +45,6 @@ class ParaglidingController {
     }
 
     function addGlider() {
-        // $id=$_POST['id'];
         $name=$_POST['name'];
         $category=$_POST['category'];
         $description=$_POST['description'];
@@ -60,13 +59,6 @@ class ParaglidingController {
 
     function editGlider($id) {
 
-        // $id_paraglider=$_POST['id'];
-        // $name=$_POST['name'];
-        // $category=$_POST['category'];
-        // $description=$_POST['description'];
-        // $difficulty=$_POST['difficulty'];
-        // $price=$_POST['price'];
-        // $id_fk=$_POST['ID_fk'];
         $glider=$this->model->editGliderById($id);
         $this->view->showUpdateForm($glider);
 

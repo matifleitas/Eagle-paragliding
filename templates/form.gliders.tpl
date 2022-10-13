@@ -1,9 +1,5 @@
   
 <form action="add" method="POST">
-  {* <div class="mb-2">
-    <label for="floatingInput" class="form-label">id: </label>
-    <input type="text" class="form-control" id="id" name="id" placeholder="Id de la vela">
-  </div> *}
 
   <div class="mb-2">
     <label for="floatingInput" class="form-label">Nombre: </label>
@@ -47,5 +43,13 @@
 </div>
 
   <button type="submit" class="btn btn-info">Agregar</button>
+
 </form>
 
+  <form action="addNewCategory" method="POST">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Agregar nueva categoria: </label>
+      <input type="text" class="form-control" id="exampleInputEmail1" name="nameCategory" aria-describedby="emailHelp">
+
+    <button type="submit" class="btn btn-primary">Modificar</button>
+  </form>

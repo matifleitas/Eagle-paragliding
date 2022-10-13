@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-12 23:06:18
+/* Smarty version 4.2.1, created on 2022-10-13 01:17:43
   from 'C:\xampp\htdocs\dashboard\Projects\TPE-especial\templates\abm.velas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_63472c4a1b6d10_78014488',
+  'unifunc' => 'content_63474b17914445_02302242',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e6487c58a26c3c4f4ffe1c8fccc40ae687b9237f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\dashboard\\Projects\\TPE-especial\\templates\\abm.velas.tpl',
-      1 => 1665608775,
+      1 => 1665616488,
       2 => 'file',
     ),
   ),
@@ -21,9 +21,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_63472c4a1b6d10_78014488 (Smarty_Internal_Template $_smarty_tpl) {
+function content_63474b17914445_02302242 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
-
 <h1 class="display-6"><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
 </h1>
   <ul class="list-group list-group-numbered">

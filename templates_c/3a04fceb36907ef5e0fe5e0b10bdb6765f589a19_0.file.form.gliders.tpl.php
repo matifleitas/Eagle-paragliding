@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-12 23:21:14
+/* Smarty version 4.2.1, created on 2022-10-13 02:30:44
   from 'C:\xampp\htdocs\dashboard\Projects\TPE-especial\templates\form.gliders.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_63472fca28aff9_33941053',
+  'unifunc' => 'content_63475c3420df09_12793982',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3a04fceb36907ef5e0fe5e0b10bdb6765f589a19' => 
     array (
       0 => 'C:\\xampp\\htdocs\\dashboard\\Projects\\TPE-especial\\templates\\form.gliders.tpl',
-      1 => 1665609670,
+      1 => 1665621041,
       2 => 'file',
     ),
   ),
@@ -20,10 +20,10 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_63472fca28aff9_33941053 (Smarty_Internal_Template $_smarty_tpl) {
+function content_63475c3420df09_12793982 (Smarty_Internal_Template $_smarty_tpl) {
 ?>  
 <form action="add" method="POST">
-  
+
   <div class="mb-2">
     <label for="floatingInput" class="form-label">Nombre: </label>
     <input type="text" class="form-control" id="name" name="name" placeholder="Nombre de la vela">
@@ -75,7 +75,15 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </div>
 
   <button type="submit" class="btn btn-info">Agregar</button>
+
 </form>
 
+  <form action="addNewCategory" method="POST">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Agregar nueva categoria: </label>
+      <input type="text" class="form-control" id="exampleInputEmail1" name="nameCategory" aria-describedby="emailHelp">
+
+    <button type="submit" class="btn btn-primary">Modificar</button>
+  </form>
 <?php }
 }

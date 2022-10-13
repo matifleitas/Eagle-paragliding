@@ -21,5 +21,11 @@ class CategoryModel extends Model {
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
 
+    function addCategoryByForm($nameCategory) {
+        $query = $this->db->prepare('INSERT INTO categoria (type_paraglider) VALUES (?)');
+        $query -> execute([$nameCategory]);
+
+    }
+
 
 }

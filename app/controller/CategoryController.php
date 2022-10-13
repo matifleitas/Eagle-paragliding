@@ -27,8 +27,10 @@ class CategoryController {
 
     }
 
-    // function showformgliders() {
-    //     $categories=$this->model->getAllCategories();
-    //     $this->view->showFormsGliders($categories);
-    // }
+    function addCategory() {
+        $nameCategory=$_POST['nameCategory'];
+        $this->model->addCategoryByForm($nameCategory);
+        
+        header("Location: " . BASE_URL . "home");
+    }
 }

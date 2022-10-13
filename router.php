@@ -55,15 +55,15 @@ switch ($params[0]) {
         $id = $params[1];
         $paraglidingController->deleteGlider($id);
         break;
-    
-    // case 'form':
-    //     $categoryController=new CategoryController();
-    //     $categoryController->showformgliders();
-    //     break;
 
     case 'add':
         $paraglidingController=new ParaglidingController();
         $paraglidingController->addGlider();
+        break;
+
+    case 'addNewCategory':
+        $categoryController=new CategoryController();
+        $categoryController->addCategory();
         break;
 
     case 'edit':

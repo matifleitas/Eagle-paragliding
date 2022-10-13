@@ -1,8 +1,4 @@
 
-{* {include file="header.tpl"}
-
-{include file="form.gliders.tpl"} *}
-
 <h1 class="display-6">{$title}</h1>
   <ul class="list-group list-group-numbered">
     {foreach from=$gliders item=$glider}
