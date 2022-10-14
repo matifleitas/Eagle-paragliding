@@ -9,34 +9,40 @@ class ParaglidingController {
     private $model; 
     private $view;
     private $categoryModel; 
+    private $email;
 
     function __construct()  {
         $this->view = new ParaglidingView(); 
         $this->model = new ParaglidingModel();
         $this->categoryModel = new CategoryModel();
+        session_start();
+        $this->setEmail();
+    }
+
+    function setEmail() {
+        if (isset ($_SESSION['EMAIL_USER'])){
+            $this->email=$_SESSION['EMAIL_USER'];
+        }
     }
 
     function showHome() {
         $categories= $this->categoryModel->getAllCategories();
-        $this->view->ShowHomeEagle($categories);
+        $this->view->ShowHomeEagle($categories, $this->email);
     }
 
     function showGliders() {
+        
         $gliders=$this->model->getAllGliders();
         $categories=$this->categoryModel->getAllCategories();
-        $this->view->GliderLists($gliders, $categories);
+   
+        $this->view->GliderLists($gliders, $categories, $this->email);
+        
     }
-
-    // function showByCategory($id) {
-    //     $categories=$this->model->getGlidersCategory($id);
-    //     $this->view->GlidersCategory($categories);
-    // }
 
     function showOneGlider($id) {
         $glider=$this->model->getoneGliderbyId($id);
-        $this->view->GliderById($glider);
-        
-        // header("Location: " . BASE_URL . );
+        $this->view->GliderById($glider, $this->email);
+    
     }
 
     function deleteGlider($id) {
@@ -58,15 +64,15 @@ class ParaglidingController {
     }
 
     function editGlider($id) {
-
+        $categories=$this->categoryModel->getAllCategories();
         $glider=$this->model->editGliderById($id);
-        $this->view->showUpdateForm($glider);
+        $this->view->showUpdateForm($glider, $categories, $this->email);
 
         header("Location: " . BASE_URL);
     }
 
     function sendGliderUpdate($id) {
-        $id_paraglider=$_POST['id'];
+        
         $name=$_POST['name'];
         $category=$_POST['category'];
         $description=$_POST['description'];
@@ -79,13 +85,8 @@ class ParaglidingController {
         header("Location: " . BASE_URL .'home');
     }
 
-    // function showformgliders() {
-    //     $categories=$this->model->getAllcategoriesForm();
-    //     $this->view->showFormsGliders($categories);
-    // }
-
     function showAboutUs() {
-        $this->view->infoAboutUs();
+        $this->view->infoAboutUs($this->email);
     }
 }
 

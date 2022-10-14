@@ -13,23 +13,11 @@ class ParaglidingModel extends Model {
     }
 
     function getOneGliderById($id) {
-        $query = $this->db->prepare('SELECT parapentes.name, parapentes.type_paraglider, parapentes.description, parapentes.difficulty, parapentes.price, categoria.type_paraglider
-        FROM parapentes JOIN categoria
-        ON parapentes.id_category_fk = categoria.id_category WHERE parapentes.id_category_fk = ?');
-
+        $query = $this->db->prepare('SELECT id_parapente, name, type_paraglider, description, image, difficulty, price  FROM parapentes WHERE id_parapente = ?');
         $query->execute([$id]);   
-        return $query->fetchAll(PDO::FETCH_OBJ);
+        
+        return $query->fetch(PDO::FETCH_OBJ);
     }
-
-    // public function getGlidersCategory($id) {
-    //     $query = $this->db->prepare('SELECT a.id_parapente, a.name, a.type_paraglider, a.description, a.price AS categoria
-    //     FROM parapentes a
-    //     INNER JOIN categoria b
-    //     ON a.type_paraglider = b.type_paraglider WHERE b.id_category = ?');
-    //     $query -> execute([$id]);
-    //     return $query->fetchAll(PDO::FETCH_OBJ);
-
-    // }
 
     function deleteGliderById($id) {
         $query = $this->db->prepare('DELETE FROM parapentes WHERE id_parapente = ?');

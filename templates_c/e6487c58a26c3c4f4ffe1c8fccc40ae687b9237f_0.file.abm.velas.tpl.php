@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-13 01:17:43
+/* Smarty version 4.2.1, created on 2022-10-14 04:14:34
   from 'C:\xampp\htdocs\dashboard\Projects\TPE-especial\templates\abm.velas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_63474b17914445_02302242',
+  'unifunc' => 'content_6348c60ae401b0_35160898',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e6487c58a26c3c4f4ffe1c8fccc40ae687b9237f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\dashboard\\Projects\\TPE-especial\\templates\\abm.velas.tpl',
-      1 => 1665616488,
+      1 => 1665713620,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_63474b17914445_02302242 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6348c60ae401b0_35160898 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <h1 class="display-6"><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
 </h1>
@@ -52,12 +52,12 @@ $_smarty_tpl->tpl_vars['glider']->do_else = false;
           ●Precio: <p class="fw-semibold"><?php echo $_smarty_tpl->tpl_vars['glider']->value->price;?>
 </p>
         </span>
-      
-      <a href='edit/<?php echo $_smarty_tpl->tpl_vars['glider']->value->id_parapente;?>
+      <?php if ($_smarty_tpl->tpl_vars['email']->value) {?>
+        <a href='edit/<?php echo $_smarty_tpl->tpl_vars['glider']->value->id_parapente;?>
 ' type='button' class="btn btn-outline-primary">Editar</a>
-      <a href='delete/<?php echo $_smarty_tpl->tpl_vars['glider']->value->id_parapente;?>
+        <a href='delete/<?php echo $_smarty_tpl->tpl_vars['glider']->value->id_parapente;?>
 ' type='button' class="btn btn-outline-danger">Borrar</a>
-
+      <?php }?>
     </li>
 
     <?php

@@ -1,8 +1,18 @@
 {include file="header.tpl"}
 
-<div class="card text-center" style="width: 50rem;">
-  <img src="https://justacro.com/files/styles/video_preview/public/gear/glider/photo/image10dsc00216.jpg.res-800x600.jpg?itok=QCxvWndn" class="card-img-top" alt="...">
-  <div class="card-body">
-    <p class="card-text">{$glider->descritption}</p>
+<div class="container">
+  <div class="card text-center" style="width: 40rem;">
+    <h1> {$glider->name} </h1>
+      <div><img src="{$glider->image}" class="img-thumbnail" alt="..."></div>
+      <span class="fw-bold">
+        ●Categoria de la vela: <p class="fw-semibold">{$glider->type_paraglider}</p> 
+        <br>
+        ●Description: <p class="fw-semibold">{$glider->description}</p> 
+        <br>
+        ●Dificultad: <p class="fw-semibold">{$glider->difficulty}</p>
+        <br> 
+        ●Precio: <p class="fw-semibold">{$glider->price}</p>
+      </span>
+    </div>
   </div>
 </div>

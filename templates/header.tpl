@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/style.css"> 
     
     <title>Eagle</title>
 </head>
@@ -18,7 +18,7 @@
   <div class="container-fluid">
     <a class="navbar-brand" href="#"> Eagle Paragliding </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -38,13 +38,13 @@
                 {/foreach}
             </ul>
         </li>
-        {if !isset($smarty.session.id_user)}
+        {if !$email}
             <li class="nav-item">
                 <a class="nav-link" href="login"> Login </a>
             </li>
         {else} 
             <li class="nav-item">
-                <a class="nav-link" href="logout"> logout ({$smarty.session.email_user}) </a>
+                <a class="nav-link" href="logout"> logout - {$email} </a>
             </li>
         {/if}
         <li class="nav-item">

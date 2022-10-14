@@ -8,16 +8,25 @@ class CheckController {
     private $model;
     private $view;
     private $categoryModel;
+    private $email;
 
     public function __construct() {
         $this->model = new UserModel();
         $this->view = new UserView();
         $this->categoryModel = new CategoryModel();
+        session_start();
+        $this->setEmail();
+    }
+
+    function setEmail() {
+        if (isset ($_SESSION['EMAIL_USER'])){
+            $this->email=$_SESSION['EMAIL_USER'];
+        }
     }
 
     public function showFormLogin() {
         $categories= $this->categoryModel->getAllCategories();
-        $this->view->FormLogin($categories);
+        $this->view->FormLogin($categories, $this->email);
     }
 
     public function verifyUser() {
@@ -31,13 +40,12 @@ class CheckController {
         
         if ($user && password_verify($password, $user->password)) {
             session_start();
-            $_SESSION['id_user'] = $user->id_admin;
-            $_SESSION['email_user'] = $user->email;
-
+            $_SESSION['EMAIL_USER'] = $user->email;
+          
             header("Location: " . BASE_URL . 'home');
+            
         } 
         else {
-            
            $this->view->FormLogin($categories, "El usuario o la contraseña no existe.");
         } 
     }
@@ -45,7 +53,7 @@ class CheckController {
     public function logoutUser() {
             session_start();
             session_destroy();
-            header("Location: " . BASE_URL);
+            header("Location: " . BASE_URL . 'home');
         }
     }
     

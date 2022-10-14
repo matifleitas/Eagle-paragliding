@@ -49,6 +49,7 @@ switch ($params[0]) {
         $paraglidingController=new ParaglidingController();
         $id = $params[1];
         $paraglidingController->showOneGlider($id);
+        break;
 
     case 'delete':
         $paraglidingController=new ParaglidingController();

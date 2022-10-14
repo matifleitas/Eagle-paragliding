@@ -15,10 +15,10 @@
           <br> 
           ●Precio: <p class="fw-semibold">{$glider->price}</p>
         </span>
-      
-      <a href='edit/{$glider->id_parapente}' type='button' class="btn btn-outline-primary">Editar</a>
-      <a href='delete/{$glider->id_parapente}' type='button' class="btn btn-outline-danger">Borrar</a>
-
+      {if $email}
+        <a href='edit/{$glider->id_parapente}' type='button' class="btn btn-outline-primary">Editar</a>
+        <a href='delete/{$glider->id_parapente}' type='button' class="btn btn-outline-danger">Borrar</a>
+      {/if}
     </li>
 
     {/foreach}

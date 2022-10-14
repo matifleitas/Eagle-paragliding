@@ -26,6 +26,4 @@ class CategoryModel extends Model {
         $query -> execute([$nameCategory]);
 
     }
-
-
 }

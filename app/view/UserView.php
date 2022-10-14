@@ -8,8 +8,8 @@ class UserView {
         $this->smarty = new Smarty(); 
     }
 
-    function FormLogin($categories, $error = null) {
-        $this->smarty->assign("error", $error);
+    function FormLogin($categories, $email = null) {
+        $this->smarty->assign("email", $email);
         $this->smarty->assign('categories', $categories);
         $this->smarty->display('login.user.tpl');
     }
