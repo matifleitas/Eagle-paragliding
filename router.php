@@ -62,6 +62,28 @@ switch ($params[0]) {
         $paraglidingController->addGlider();
         break;
 
+    case 'editCategory':
+        $categoryController=new CategoryController();
+        $id = $params[1];
+        $categoryController->showFormUpdateCategory($id);
+        break;
+
+    case 'updatedCategory':
+        $categoryController=new CategoryController();
+        $id = $params[1];
+        $categoryController->sendCategoryUpdated($id);
+
+
+    case 'deleteCategory':
+        $paraglidingController = new ParaglidingController();
+        $id = $params[1];
+        $gliders= $paraglidingController->getAllGlidersByCategoryId($id);
+        // var_dump($gliders);
+        $categoryController=new CategoryController();
+        $category = $params[1];
+        $categoryController->deleteCategoryById($category, $gliders);
+        break;
+
     case 'addNewCategory':
         $categoryController=new CategoryController();
         $categoryController->addCategory();

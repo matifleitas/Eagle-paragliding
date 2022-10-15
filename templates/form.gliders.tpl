@@ -43,8 +43,8 @@
   </div>
 
     <button type="submit" class="btn btn-info">Agregar</button>
-
+    <br>
+    <br>
   </form>
-
-{include file="add.newCategory.tpl"}
+  
 {/if}

@@ -38,6 +38,10 @@ class ParaglidingModel extends Model {
         return $query->fetch(PDO::FETCH_OBJ);
     }
 
+    function getAllGlidersByCategory($id) {
+        
+    }
+
     function updateGliderById($id, $name, $category, $description, $url, $difficulty, $price, $id_fk){
         $query = $this->db->prepare("UPDATE parapentes SET  name = ?,  type_paraglider = ?, description = ?, image = ?, difficulty = ?, price = ?, id_category_fk= ? WHERE id_parapente = ? ");
         $query->execute([$name, $category, $description, $url, $difficulty, $price, $id_fk, $id]);

@@ -85,6 +85,16 @@ class ParaglidingController {
         header("Location: " . BASE_URL .'home');
     }
 
+    function getAllGlidersByCategoryId($id) {
+        if (!empty($id)) {
+            $gliderByCategory = $this->model->getAllGlidersByCategory($id);
+            return $gliderByCategory;
+        }
+        else {
+            $this->view->showError("Error al intentar borrar un genero");
+        }
+    }
+
     function showAboutUs() {
         $this->view->infoAboutUs($this->email);
     }

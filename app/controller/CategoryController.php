@@ -33,13 +33,41 @@ class CategoryController {
         $categoriesId= $this->model->getGliderById($id);
         $categories= $this->model->getAllCategories();
         $this->view->GliderByCategory($categoriesId, $categories, $this->email);
+    }
 
+    function showFormUpdateCategory($id) {
+        $categories= $this->model->getAllCategories();
+        $categoriesId= $this->model->getCategoryById($id);
+        $this->view->showFormUpdateCategory($categoriesId, $categories, $this->email);
+    }
+
+    function sendCategoryUpdated($id) {
+        $nameUpdatedCategory=$_POST['editCategory'];
+
+        $this->model->updateCategoryById($id, $nameUpdatedCategory);
+        header("Location: " . BASE_URL . 'home');
+    }
+
+    function deleteCategoryById($id, $gliders) {
+        if (empty($gliders)) {
+            if(isset($id)) {
+                $result=$this->model->deleteCategory($id);
+
+                header("Location: " . BASE_URL);
+            }
+            else {
+                $this->view->showError("Error al intentar eliminar la categoria");
+            }
+        }
+        else {
+            $this->view->showError("No se puede eliminar una categoria si tiene productos asignados");
+        }
     }
 
     function addCategory() {
         $nameCategory=$_POST['nameCategory'];
         $this->model->addCategoryByForm($nameCategory);
         
-        header("Location: " . BASE_URL . "home");
+        header("Location: " . BASE_URL);
     }
 }

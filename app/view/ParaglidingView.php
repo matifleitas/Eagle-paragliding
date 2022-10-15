@@ -30,6 +30,8 @@ class ParaglidingView {
         $this->smarty->assign('categories', $categories);
         $this->smarty->display('header.tpl');
         $this->smarty->display('form.gliders.tpl');
+        $this->smarty->display('abm.category.tpl');
+        $this->smarty->display('add.newCategory.tpl');
         $this->smarty->display('abm.velas.tpl');
     }
 
@@ -40,6 +42,11 @@ class ParaglidingView {
         $this->smarty->display('header.tpl');
         $this->smarty->display('form.update.tpl');
         $this->smarty->display('footer.tpl');
+    }
+
+    function showError($error) {
+        $this->smarty->assign('error', $error);
+        $this->smarty->display('error.tpl');
     }
 
     function infoAboutUs($email = null) {
