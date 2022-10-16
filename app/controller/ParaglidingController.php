@@ -88,6 +88,7 @@ class ParaglidingController {
     function getAllGlidersByCategoryId($id) {
         if (!empty($id)) {
             $gliderByCategory = $this->model->getAllGlidersByCategory($id);
+            // var_dump($gliderByCategory);
             return $gliderByCategory;
         }
         else {

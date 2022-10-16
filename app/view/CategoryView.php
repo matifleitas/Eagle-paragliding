@@ -20,17 +20,17 @@ class CategoryView {
         $this->smarty->display('abm.gliderby-category.tpl');
     }
 
-    function showError($error) {
+    function showError($error, $categories, $email = null) {
+        $this->smarty->assign('email', $email);
+        $this->smarty->assign('categories', $categories);
         $this->smarty->assign('error', $error);
         $this->smarty->display('error.tpl');
     }
 
     function showFormUpdateCategory($categoriesId, $categories, $email = null) {
+        $this->smarty->assign('email', $email);
         $this->smarty->assign('categoriesId', $categoriesId);
         $this->smarty->assign('categories', $categories);
-        $this->smarty->assign('email', $email);
-        $this->smarty->display('header.tpl');
         $this->smarty->display('form.updateCategory.tpl');
-        $this->smarty->display('footer.tpl');
     }
 }

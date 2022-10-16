@@ -22,7 +22,7 @@ class CategoryModel extends Model {
     }
 
     function getCategoryById($id) {
-        $query = $this->db->prepare('SELECT type_paraglider FROM categoria WHERE id_category = ?');
+        $query = $this->db->prepare('SELECT * FROM categoria WHERE id_category = ?');
         $query->execute([$id]);   
         
         return $query->fetch(PDO::FETCH_OBJ);
@@ -33,13 +33,9 @@ class CategoryModel extends Model {
         $query->execute([$nameUpdatedCategory, $id]);
     }
 
-    function deleteCategoryById($id) {
+    function deleteCategory($id) {
         $query = $this->db->prepare('DELETE FROM categoria WHERE id_category = ?');
         $query->execute([$id]); 
-    }
-
-    function deleteCategory($id) {
-        
     }
 
     function addCategoryByForm($nameCategory) {

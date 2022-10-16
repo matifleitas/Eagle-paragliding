@@ -11,7 +11,7 @@ if (!empty($_GET['action'])) {
     $action = $_GET['action'];
 }
 
-$params = explode('/', $action); 
+$params = explode('/', $action);
 
 switch ($params[0]) {
     case 'login':
@@ -28,7 +28,7 @@ switch ($params[0]) {
         $checkController = new CheckController();
         $checkController->verifyUser();
         break;
-    
+
     case 'home':
         $paraglidingController=new ParaglidingController();
         $paraglidingController->showHome();
@@ -44,7 +44,7 @@ switch ($params[0]) {
         $id = $params[1];
         $categoryController->showByCategory($id);
         break;
-    
+
     case 'glider':
         $paraglidingController=new ParaglidingController();
         $id = $params[1];

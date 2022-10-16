@@ -39,7 +39,10 @@ class ParaglidingModel extends Model {
     }
 
     function getAllGlidersByCategory($id) {
-        
+        $query = $this->db->prepare('SELECT * FROM parapentes WHERE id_category_fk = ?');
+        $query->execute([$id]);
+
+        return $query->fetchAll(PDO::FETCH_OBJ);
     }
 
     function updateGliderById($id, $name, $category, $description, $url, $difficulty, $price, $id_fk){
