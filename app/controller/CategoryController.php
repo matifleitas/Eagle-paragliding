@@ -44,10 +44,11 @@ class CategoryController {
     }
 
     function sendCategoryUpdated($id) {
+        $this->helper->askAdminIsLogged();
         $nameUpdatedCategory=$_POST['editCategory'];
 
         $this->model->updateCategoryById($id, $nameUpdatedCategory);
-        header("Location: " . BASE_URL);
+        header("Location: " . BASE_URL . "gliders");
     }
 
     function deleteCategoryById($id, $gliders) {
@@ -57,21 +58,22 @@ class CategoryController {
             if(isset($id)) {
                 $result=$this->model->deleteCategory($id);
 
-                header("Location: " . BASE_URL);
+                header("Location: " . BASE_URL . "gliders");
             }
             else {
                 $this->view->showError("Error al intentar eliminar la categoria", $categories, $this->email);
             }
         }
         else {
-            $this->view->showError("No se puede eliminar una categoria si tiene productos asignados", $categories, $this->email);
+            $this->view->showError("Error al intentar borrar una categoria, para poder hacerlo se deberan borrar los productos asignados en ella.", $categories, $this->email);
         }
     }
 
     function addCategory() {
+        $this->helper->askAdminIsLogged();
         $nameCategory=$_POST['nameCategory'];
         $this->model->addCategoryByForm($nameCategory);
         
-        header("Location: " . BASE_URL);
+        header("Location: " . BASE_URL . "gliders");
     }
 }

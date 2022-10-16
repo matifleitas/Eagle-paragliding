@@ -78,7 +78,6 @@ switch ($params[0]) {
         $paraglidingController = new ParaglidingController();
         $id = $params[1];
         $gliders= $paraglidingController->getAllGlidersByCategoryId($id);
-        // var_dump($gliders);
         $categoryController=new CategoryController();
         $category = $params[1];
         $categoryController->deleteCategoryById($category, $gliders);
@@ -108,7 +107,7 @@ switch ($params[0]) {
 
      default:
         $paraglidingController=new ParaglidingController();
-        echo "404 not found";
+        echo "404 not found, pagina no encontrada";
         break;
 }
 

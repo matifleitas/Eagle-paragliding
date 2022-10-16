@@ -4,17 +4,20 @@ require_once'app/model/ParaglidingModel.php';
 require_once'app/model/MainModel.php';
 require_once'app/view/ParaglidingView.php';
 require_once'app/model/CategoryModel.php';
+require_once'app/helpers/AdminHelper.php';
 
 class ParaglidingController {
     private $model; 
     private $view;
     private $categoryModel; 
     private $email;
+    private $helper;
 
     function __construct()  {
         $this->view = new ParaglidingView(); 
         $this->model = new ParaglidingModel();
         $this->categoryModel = new CategoryModel();
+        $this->helper = new AdminHelper();
         session_start();
         $this->setEmail();
     }
@@ -31,7 +34,6 @@ class ParaglidingController {
     }
 
     function showGliders() {
-        
         $gliders=$this->model->getAllGliders();
         $categories=$this->categoryModel->getAllCategories();
    
@@ -46,11 +48,13 @@ class ParaglidingController {
     }
 
     function deleteGlider($id) {
+        $this->helper->askAdminIsLogged();
         $this->model->deleteGliderById($id);
-        header("Location: " . BASE_URL);
+        header("Location: " . BASE_URL . "gliders");
     }
 
     function addGlider() {
+        $this->helper->askAdminIsLogged();
         $name=$_POST['name'];
         $category=$_POST['category'];
         $description=$_POST['description'];
@@ -60,19 +64,18 @@ class ParaglidingController {
         $id_fk=$_POST['ID_fk'];
 
         $this->model->addGliderByForm($name, $category, $description, $url, $difficulty, $price, $id_fk);
-        header("Location: " . BASE_URL . "home");
+        header("Location: " . BASE_URL . "gliders");
     }
 
     function editGlider($id) {
+        $this->helper->askAdminIsLogged();
         $categories=$this->categoryModel->getAllCategories();
         $glider=$this->model->editGliderById($id);
         $this->view->showUpdateForm($glider, $categories, $this->email);
-
-        header("Location: " . BASE_URL);
     }
 
     function sendGliderUpdate($id) {
-        
+        $this->helper->askAdminIsLogged();
         $name=$_POST['name'];
         $category=$_POST['category'];
         $description=$_POST['description'];
@@ -82,17 +85,14 @@ class ParaglidingController {
         $id_fk=$_POST['ID_fk'];
 
         $this->model->updateGliderById($id, $name, $category, $description, $url, $difficulty, $price, $id_fk);
-        header("Location: " . BASE_URL .'home');
+        header("Location: " . BASE_URL . "gliders");
     }
 
     function getAllGlidersByCategoryId($id) {
         if (!empty($id)) {
             $gliderByCategory = $this->model->getAllGlidersByCategory($id);
-            // var_dump($gliderByCategory);
+    
             return $gliderByCategory;
-        }
-        else {
-            $this->view->showError("Error al intentar borrar un genero");
         }
     }
 
