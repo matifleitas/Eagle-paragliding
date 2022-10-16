@@ -58,35 +58,56 @@ class ParaglidingController {
         $name=$_POST['name'];
         $category=$_POST['category'];
         $description=$_POST['description'];
-        $url=$_POST['URL'];
         $difficulty=$_POST['difficulty'];
         $price=$_POST['price'];
         $id_fk=$_POST['ID_fk'];
 
-        $this->model->addGliderByForm($name, $category, $description, $url, $difficulty, $price, $id_fk);
+        if($_FILES['input_name']['type'] == "image/jpg" || 
+           $_FILES['input_name']['type'] == "image/jpeg" ||
+           $_FILES['input_name']['type'] == "image/png" ) {
+
+            $this->model->addGliderByForm($name, $category, $description, $difficulty, $price,
+            $id_fk, $_FILES['input_name']['tmp_name']);
+            header("Location: " . BASE_URL . "gliders");
+           }
+        else {        
+
+        $this->model->addGliderByForm($name, $category, $description, $difficulty, $price, $id_fk);
         header("Location: " . BASE_URL . "gliders");
+        }
     }
 
     function editGlider($id) {
         $this->helper->askAdminIsLogged();
         $categories=$this->categoryModel->getAllCategories();
         $glider=$this->model->editGliderById($id);
+        
         $this->view->showUpdateForm($glider, $categories, $this->email);
     }
 
     function sendGliderUpdate($id) {
-        $this->helper->askAdminIsLogged();
-        $name=$_POST['name'];
-        $category=$_POST['category'];
-        $description=$_POST['description'];
-        $url=$_POST['image'];
-        $difficulty=$_POST['difficulty'];
-        $price=$_POST['price'];
-        $id_fk=$_POST['ID_fk'];
+    $this->helper->askAdminIsLogged();
+    $name=$_POST['name'];
+    $category=$_POST['category'];
+    $description=$_POST['description'];
+    $difficulty=$_POST['difficulty'];
+    $price=$_POST['price'];
+    $id_fk=$_POST['ID_fk'];
 
-        $this->model->updateGliderById($id, $name, $category, $description, $url, $difficulty, $price, $id_fk);
+    if($_FILES['input_name']['type'] == "image/jpg" || 
+       $_FILES['input_name']['type'] == "image/jpeg" ||
+       $_FILES['input_name']['type'] == "image/png" ) {
+
+        $this->model->updateGliderById($id, $name, $category, $description, $difficulty, $price,
+        $id_fk, $_FILES['input_name']['tmp_name']);
         header("Location: " . BASE_URL . "gliders");
+       }
+    else {    
+
+    $this->model->updateGliderById($id, $name, $category, $description, $difficulty, $price, $id_fk);
+    header("Location: " . BASE_URL . "gliders");
     }
+}
 
     function getAllGlidersByCategoryId($id) {
         if (!empty($id)) {

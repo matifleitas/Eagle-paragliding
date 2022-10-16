@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-14 19:25:22
+/* Smarty version 4.2.1, created on 2022-10-17 00:32:49
   from 'C:\xampp\htdocs\dashboard\Projects\TPE-especial\templates\form.gliders.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_63499b8232e814_52815343',
+  'unifunc' => 'content_634c8691c91086_14097884',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3a04fceb36907ef5e0fe5e0b10bdb6765f589a19' => 
     array (
       0 => 'C:\\xampp\\htdocs\\dashboard\\Projects\\TPE-especial\\templates\\form.gliders.tpl',
-      1 => 1665768314,
+      1 => 1665959297,
       2 => 'file',
     ),
   ),
@@ -20,9 +20,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_63499b8232e814_52815343 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634c8691c91086_14097884 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['email']->value) {?>
-  <form action="add" method="POST">
+  <form action="add" method="POST" enctype="multipart/form-data">
 
     <div class="mb-2">
       <label for="floatingInput" class="form-label">Nombre: </label>
@@ -53,10 +53,9 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
       <textarea class="form-control" id="description" name="description" rows="3"></textarea>
     </div>
 
-      <label for="basic-url" class="form-label">URL de imagen del parapente</label>
+      <label for="basic-url" class="form-label">Subir archivo imagen</label>
       <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
-        <input type="text" class="form-control" id="URL" name="URL" class="form-control" aria-describedby="basic-addon3">
+        <input type="file" name="input_name" id="imageToUpload">
       </div>
 
     <div class="mb-2">

@@ -1,5 +1,5 @@
 {if $email}
-  <form action="add" method="POST">
+  <form action="add" method="POST" enctype="multipart/form-data">
 
     <div class="mb-2">
       <label for="floatingInput" class="form-label">Nombre: </label>
@@ -21,10 +21,9 @@
       <textarea class="form-control" id="description" name="description" rows="3"></textarea>
     </div>
 
-      <label for="basic-url" class="form-label">URL de imagen del parapente</label>
+      <label for="basic-url" class="form-label">Subir archivo imagen</label>
       <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
-        <input type="text" class="form-control" id="URL" name="URL" class="form-control" aria-describedby="basic-addon3">
+        <input type="file" name="input_name" id="imageToUpload">
       </div>
 
     <div class="mb-2">

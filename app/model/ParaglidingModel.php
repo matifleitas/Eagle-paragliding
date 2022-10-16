@@ -24,15 +24,25 @@ class ParaglidingModel extends Model {
         $query->execute([$id]);
     }
 
-    function addGliderByForm($name, $category, $description, $url, $difficulty, $price, $id_fk) {
-        $query = $this->db->prepare("INSERT INTO parapentes (name, type_paraglider, description, image, difficulty, price, id_category_fk) VALUES (?, ?, ?, ?, ?, ?, ?)");
-        $query->execute([$name, $category, $description, $url, $difficulty, $price, $id_fk]);
+    function addGliderByForm($name, $category, $description, $difficulty, $price, $id_fk, $image = null) {
+        $pathImg = null;
+        if($image)
+            $pathImg = $this->uploadImage($image);
+
+        $query = $this->db->prepare("INSERT INTO parapentes (name, type_paraglider, description, difficulty, price, id_category_fk, image) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        $query->execute([$name, $category, $description, $difficulty, $price, $id_fk, $pathImg]);
 
         return $this->db->lastInsertId();
     }
 
+    private function uploadImage($image) {
+        $target = 'images/' . uniqid() . '.jpg';
+        move_uploaded_file($image, $target);
+        return $target;
+    }
+
     function editGliderById($id) {
-        $query = $this->db->prepare('SELECT id_parapente, name, type_paraglider, description, image, difficulty, price, id_category_fk FROM parapentes WHERE id_parapente= ?');
+        $query = $this->db->prepare('SELECT id_parapente, name, type_paraglider, description, difficulty, price, id_category_fk, image FROM parapentes WHERE id_parapente= ?');
 
         $query->execute([$id]);
         return $query->fetch(PDO::FETCH_OBJ);
@@ -45,9 +55,15 @@ class ParaglidingModel extends Model {
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
 
-    function updateGliderById($id, $name, $category, $description, $url, $difficulty, $price, $id_fk){
-        $query = $this->db->prepare("UPDATE parapentes SET  name = ?,  type_paraglider = ?, description = ?, image = ?, difficulty = ?, price = ?, id_category_fk= ? WHERE id_parapente = ? ");
-        $query->execute([$name, $category, $description, $url, $difficulty, $price, $id_fk, $id]);
-    }
+    function updateGliderById($id, $name, $category, $description, $difficulty, $price, $id_fk, $image = null) {
+        $pathImg = null;
+        if($image)
+            $pathImg = $this->uploadImage($image);
 
+            
+        $query = $this->db->prepare("UPDATE parapentes SET  name = ?,  type_paraglider = ?, description = ?, difficulty = ?, price = ?, id_category_fk= ?, image = ? WHERE id_parapente = ? ");
+        $query->execute([$name, $category, $description, $difficulty, $price, $id_fk, $pathImg, $id]);
+
+        return $this->db->lastInsertId();
+    }
 } 

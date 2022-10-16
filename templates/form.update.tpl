@@ -1,4 +1,4 @@
-<form action="updated/{$glider->id_parapente}" method="POST">
+<form action="updated/{$glider->id_parapente}" method="POST" enctype="multipart/form-data">
 
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Nombre de la vela: </label>
@@ -23,7 +23,7 @@
   <label for="basic-url" class="form-label">URL de imagen del parapente</label>
   <div class="input-group mb-3">
     <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
-    <input type="text" class="form-control" id="image" name="image" aria-describedby="basic-addon3">
+    <input type="file" name="input_name" id="imageToUpload">
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Dificultad: </label>

@@ -1,3 +1,4 @@
+
 {include file="header.tpl"}
 
 <form action="updatedCategory/{$categoriesId->id_category}" method="POST" class="border border-success">
@@ -5,7 +6,7 @@
         <div class="col-auto">
             <label for="inputPassword6" class="col-form-label">Editar Categoria:</label>
         
-            <input type="text" name="editCategory" class="form-control" value="{$categoriesId->type_paraglider}" required>
+            <input type="text" name="editCategory" class="form-control" >
             <button type="submit" class="btn btn-primary">Modificar</button>
             </div>
         </div>
@@ -13,3 +14,4 @@
 </form>
 
 {include file="footer.tpl"}
+

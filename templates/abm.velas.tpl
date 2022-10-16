@@ -5,7 +5,9 @@
       
     <li class="list-group-item d-flex justify-content-between align-items-start">
       <a href="glider/{$glider->id_parapente}" class="fw-bold">{$glider->name}: </a> 
-      <div><img src="{$glider->image}" class="img-thumbnail" alt="..."></div>
+      {if isset($glider->image)}
+        <div><img src="{$glider->image}" class="img-thumbnail" alt="..."></div>
+      {/if}
         <span class="fw-bold">
           ●Categoria de la vela: <p class="fw-semibold">{$glider->type_paraglider}</p> 
           <br>

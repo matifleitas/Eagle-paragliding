@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-14 19:19:11
+/* Smarty version 4.2.1, created on 2022-10-17 00:34:42
   from 'C:\xampp\htdocs\dashboard\Projects\TPE-especial\templates\abm.velas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_63499a0faa0516_58224238',
+  'unifunc' => 'content_634c8702828be8_27878437',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e6487c58a26c3c4f4ffe1c8fccc40ae687b9237f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\dashboard\\Projects\\TPE-especial\\templates\\abm.velas.tpl',
-      1 => 1665767949,
+      1 => 1665959663,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_63499a0faa0516_58224238 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634c8702828be8_27878437 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <h1 class="display-6"><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
 </h1>
@@ -37,8 +37,10 @@ $_smarty_tpl->tpl_vars['glider']->do_else = false;
       <a href="glider/<?php echo $_smarty_tpl->tpl_vars['glider']->value->id_parapente;?>
 " class="fw-bold"><?php echo $_smarty_tpl->tpl_vars['glider']->value->name;?>
 : </a> 
-      <div><img src="<?php echo $_smarty_tpl->tpl_vars['glider']->value->image;?>
+      <?php if ((isset($_smarty_tpl->tpl_vars['glider']->value->image))) {?>
+        <div><img src="<?php echo $_smarty_tpl->tpl_vars['glider']->value->image;?>
 " class="img-thumbnail" alt="..."></div>
+      <?php }?>
         <span class="fw-bold">
           ●Categoria de la vela: <p class="fw-semibold"><?php echo $_smarty_tpl->tpl_vars['glider']->value->type_paraglider;?>
 </p> 

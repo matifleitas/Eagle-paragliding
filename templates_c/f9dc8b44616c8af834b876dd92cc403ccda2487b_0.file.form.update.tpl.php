@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-13 16:57:00
+/* Smarty version 4.2.1, created on 2022-10-16 23:56:12
   from 'C:\xampp\htdocs\dashboard\Projects\TPE-especial\templates\form.update.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_6348273c533435_63565853',
+  'unifunc' => 'content_634c7dfc2d30b6_19090842',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f9dc8b44616c8af834b876dd92cc403ccda2487b' => 
     array (
       0 => 'C:\\xampp\\htdocs\\dashboard\\Projects\\TPE-especial\\templates\\form.update.tpl',
-      1 => 1665673014,
+      1 => 1665957368,
       2 => 'file',
     ),
   ),
@@ -20,9 +20,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6348273c533435_63565853 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634c7dfc2d30b6_19090842 (Smarty_Internal_Template $_smarty_tpl) {
 ?><form action="updated/<?php echo $_smarty_tpl->tpl_vars['glider']->value->id_parapente;?>
-" method="POST">
+" method="POST" enctype="multipart/form-data">
 
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Nombre de la vela: </label>
@@ -56,7 +56,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
   <label for="basic-url" class="form-label">URL de imagen del parapente</label>
   <div class="input-group mb-3">
     <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
-    <input type="text" class="form-control" id="image" name="image" aria-describedby="basic-addon3">
+    <input type="file" name="input_name" id="imageToUpload">
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Dificultad: </label>
