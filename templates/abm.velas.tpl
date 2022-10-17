@@ -15,7 +15,7 @@
           <br>
           ●Dificultad: <p class="fw-semibold">{$glider->difficulty}</p>
           <br> 
-          ●Precio: <p class="fw-semibold">{$glider->price}</p>
+          ●Precio (USD): <p class="fw-semibold">{$glider->price}</p>
         </span>
       {if $email}
         <a href='edit/{$glider->id_parapente}' type='button' class="btn btn-primary">Editar</a>

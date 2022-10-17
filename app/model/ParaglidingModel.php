@@ -36,7 +36,7 @@ class ParaglidingModel extends Model {
     }
 
     private function uploadImage($image) {
-        $target = 'images/' . uniqid() . '.jpg';
+        $target = 'images/' . uniqid() . '.jpg' . '.jpeg' . '.png';
         move_uploaded_file($image, $target);
         return $target;
     }

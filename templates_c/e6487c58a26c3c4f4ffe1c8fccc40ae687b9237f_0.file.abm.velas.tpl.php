@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-17 00:34:42
+/* Smarty version 4.2.1, created on 2022-10-17 01:47:08
   from 'C:\xampp\htdocs\dashboard\Projects\TPE-especial\templates\abm.velas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_634c8702828be8_27878437',
+  'unifunc' => 'content_634c97fc6eff99_44876253',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e6487c58a26c3c4f4ffe1c8fccc40ae687b9237f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\dashboard\\Projects\\TPE-especial\\templates\\abm.velas.tpl',
-      1 => 1665959663,
+      1 => 1665964025,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_634c8702828be8_27878437 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634c97fc6eff99_44876253 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <h1 class="display-6"><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
 </h1>
@@ -51,7 +51,7 @@ $_smarty_tpl->tpl_vars['glider']->do_else = false;
           ●Dificultad: <p class="fw-semibold"><?php echo $_smarty_tpl->tpl_vars['glider']->value->difficulty;?>
 </p>
           <br> 
-          ●Precio: <p class="fw-semibold"><?php echo $_smarty_tpl->tpl_vars['glider']->value->price;?>
+          ●Precio (USD): <p class="fw-semibold"><?php echo $_smarty_tpl->tpl_vars['glider']->value->price;?>
 </p>
         </span>
       <?php if ($_smarty_tpl->tpl_vars['email']->value) {?>

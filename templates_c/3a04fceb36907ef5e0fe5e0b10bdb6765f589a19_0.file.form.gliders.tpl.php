@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-17 00:32:49
+/* Smarty version 4.2.1, created on 2022-10-17 01:01:37
   from 'C:\xampp\htdocs\dashboard\Projects\TPE-especial\templates\form.gliders.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_634c8691c91086_14097884',
+  'unifunc' => 'content_634c8d51857e19_28751072',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3a04fceb36907ef5e0fe5e0b10bdb6765f589a19' => 
     array (
       0 => 'C:\\xampp\\htdocs\\dashboard\\Projects\\TPE-especial\\templates\\form.gliders.tpl',
-      1 => 1665959297,
+      1 => 1665961283,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_634c8691c91086_14097884 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634c8d51857e19_28751072 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['email']->value) {?>
   <form action="add" method="POST" enctype="multipart/form-data">
 
