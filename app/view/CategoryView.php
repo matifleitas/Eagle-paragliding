@@ -27,7 +27,8 @@ class CategoryView {
         $this->smarty->display('error.tpl');
     }
 
-    function showFormUpdateCategory($categoriesId, $categories, $email = null) {
+    function showFormUpdateCategory($gliders, $categoriesId, $categories, $email = null) {
+        $this->smarty->assign('gliders', $gliders);
         $this->smarty->assign('email', $email);
         $this->smarty->assign('categoriesId', $categoriesId);
         $this->smarty->assign('categories', $categories);

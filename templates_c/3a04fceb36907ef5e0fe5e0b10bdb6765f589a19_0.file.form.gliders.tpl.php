@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-17 01:01:37
+/* Smarty version 4.2.1, created on 2022-10-17 04:39:03
   from 'C:\xampp\htdocs\dashboard\Projects\TPE-especial\templates\form.gliders.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_634c8d51857e19_28751072',
+  'unifunc' => 'content_634cc04703d5b8_51934564',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3a04fceb36907ef5e0fe5e0b10bdb6765f589a19' => 
     array (
       0 => 'C:\\xampp\\htdocs\\dashboard\\Projects\\TPE-especial\\templates\\form.gliders.tpl',
-      1 => 1665961283,
+      1 => 1665974314,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_634c8d51857e19_28751072 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634cc04703d5b8_51934564 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['email']->value) {?>
   <form action="add" method="POST" enctype="multipart/form-data">
 
@@ -39,7 +39,7 @@ $_smarty_tpl->tpl_vars['category']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['category']->value) {
 $_smarty_tpl->tpl_vars['category']->do_else = false;
 ?>
-              <option value="<?php echo $_smarty_tpl->tpl_vars['category']->value->type_paraglider;?>
+              <option value="<?php echo $_smarty_tpl->tpl_vars['category']->value->id_category;?>
 "><?php echo $_smarty_tpl->tpl_vars['category']->value->type_paraglider;?>
 </option>
           <?php
@@ -67,11 +67,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
       <label for="floatingInput" class="form-label">Precio: </label>
       <input type="number" class="form-control" id="price" name="price" placeholder="Precio de la vela">
     </div>
-
-    <div class="mb-2">
-      <label for="floatingInput" class="form-label">ID_fk: </label>
-      <input type="text" class="form-control" id="ID_fk" name="ID_fk" placeholder="Precio de la vela">
-  </div>
 
     <button type="submit" class="btn btn-info">Agregar</button>
     <br>

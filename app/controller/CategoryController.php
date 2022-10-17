@@ -2,19 +2,20 @@
 
 require_once'app/model/CategoryModel.php';
 require_once'app/view/CategoryView.php';
+require_once'app/model/ParaglidingModel.php';
 require_once'app/helpers/AdminHelper.php';
 
 class CategoryController {
     private $model;
     private $view;
-    private $categoryModel; 
+    private $paraglidingModel;
     private $email;
     private $helper;
 
     public function __construct() {
         $this->model = new CategoryModel();
         $this->view = new CategoryView();
-        $this->categoryModel = new CategoryModel();
+        $this->paraglidingModel = new ParaglidingModel();
         $this->helper = new AdminHelper();
         $this->setEmail();
     }
@@ -37,10 +38,11 @@ class CategoryController {
     }
 
     function showFormUpdateCategory($id) {
+        $gliders=$this->paraglidingModel->getAllGliders();
         $categories= $this->model->getAllCategories();
         $categoriesId= $this->model->getCategoryById($id);
 
-        $this->view->showFormUpdateCategory($categoriesId, $categories, $this->email);
+        $this->view->showFormUpdateCategory($gliders, $categoriesId, $categories, $this->email);
     }
 
     function sendCategoryUpdated($id) {

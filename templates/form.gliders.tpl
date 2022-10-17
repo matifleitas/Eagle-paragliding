@@ -11,7 +11,7 @@
           <select class="form-select" name="category" id="">
           <option selected disabled>Seleccionar la categoria de la nueva vela: </option>
           {foreach $categories as $category}
-              <option value="{$category->type_paraglider}">{$category->type_paraglider}</option>
+              <option value="{$category->id_category}">{$category->type_paraglider}</option>
           {/foreach}
       </select>
     </div>
@@ -35,11 +35,6 @@
       <label for="floatingInput" class="form-label">Precio: </label>
       <input type="number" class="form-control" id="price" name="price" placeholder="Precio de la vela">
     </div>
-
-    <div class="mb-2">
-      <label for="floatingInput" class="form-label">ID_fk: </label>
-      <input type="text" class="form-control" id="ID_fk" name="ID_fk" placeholder="Precio de la vela">
-  </div>
 
     <button type="submit" class="btn btn-info">Agregar</button>
     <br>
