@@ -51,7 +51,7 @@ class ParaglidingView {
 
     function infoAboutUs($email = null) {
         $this->smarty->assign('email', $email);
-        $this->smarty->assign('about', 'Somos un equipo de parapentistas Olavarrienses el cual vendemos productos de parapente en Tandil para la promulgacion de este hermoso deporte');
+        $this->smarty->assign('about', 'Somos un equipo de parapentistas Olavarrienses, el cual vendemos productos de parapente en especial velas, en Tandil para la promulgacion de este hermoso deporte');
         $this->smarty->display('about.us.tpl');
 
     }

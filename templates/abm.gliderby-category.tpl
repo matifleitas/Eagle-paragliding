@@ -6,9 +6,15 @@
   {foreach from=$categoriesId item=$category}
       
     <li class="list-group-item d-flex justify-content-between align-items-start">
-      <a href="glider">{$category->name}:</a> 
+      <h5>{$category->name}:</h5>
       <div><img src="{$category->image}" class="rounded float-end" alt="..."></div>
-          <span>{$category->description} - Dificultad: {$category->difficulty} - Precio: {$category->price}</span>
+      <span>
+        ●Description: <p class="fw-semibold">{$category->description}</p> 
+        <br>
+        ●Dificultad: <p class="fw-semibold">{$category->difficulty}</p>
+        <br> 
+        ●Precio (USD): <p class="fw-semibold">{$category->price}</p>
+      </span>
         
     </li>
   {/foreach}
